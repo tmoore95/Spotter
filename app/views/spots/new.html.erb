@@ -1,0 +1,10 @@
+<%= simple_form_for @spot, html: { class: "col-sm-6 offset-sm-3" } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :security, collection: %w[None Calm Low Medium High Bust] %>
+  <%= f.input :stairset %>
+  <%= f.input :ledge %>
+  <%= f.input :cover %>
+  <%= f.input :flatground %>
+  <%= f.button :submit %>
+<% end %>

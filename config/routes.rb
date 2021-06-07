@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'check_ins/new'
+  get 'check_ins/create'
+  get 'spots/index'
+  devise_for :skaters
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :spots do
+    resources :check_ins, only: :create
+  end
+  resources :skaters
+  post "spots/:id", to: "tags#create", as: "new_tag"
 end
