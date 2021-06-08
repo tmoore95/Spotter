@@ -1,6 +1,4 @@
-var POST_URL = "my post url"
-var APP_ID = "my app ID"
-var CLIENT_TOKEN = "my client token"
+var POST_URL = document.querySelector("form-control string url required")
 var post = document.querySelector(".post")
 
 async function getPost() {
