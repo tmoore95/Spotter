@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Staatliches&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+.spot-main-banner {
+  height: 25vh;
+  width: 100%;
+  position: relative;
+  background-image: url("https://static.dezeen.com/uploads/2019/08/southbank-undercroft-skate-space-feilden-clegg-bradley-studios_dezeen_2364_col_12.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.spot-name {
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  margin: 0;
+  font-size: 25px;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 1px;
+}
+
+.spot-dropin {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.btn-dropin {
+  font-size: 13px;
+}
+
+.spot-info-container {
+  p {
+    margin: 0;
+    font-size: 13px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  background-color: rgb(41, 41, 41);
+  color: white;
+}
+
+.spot-description-container {
+  height: 10vh;
+  padding: 10px;
+}
+
+.spot-description-header {
+  font-family: "Staatliches", cursive;
+  margin-bottom: 2px;
+}
+
+.spot-description-body {
+  font-size: 10px;
+  margin: 0;
+}
+
+.tag-card {
+  height: 200px;
+  margin: 10px;
+  background-color: #262626;
+  border-radius: 12px;
+}
+
+.tag-card-head {
+  height: 18%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 13px;
+  }
+}
+
+.tag-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

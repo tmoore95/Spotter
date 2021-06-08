@@ -7,6 +7,7 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     @tag = Tag.new
+    @tags = @spot.tags.all
   end
 
   def new
