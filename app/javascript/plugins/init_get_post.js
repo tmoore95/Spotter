@@ -13,3 +13,5 @@ async function initGetPost() {
 }
 
 export { initGetPost };
+
+{/* <div class="post"></div> */}
