@@ -3,10 +3,10 @@
    <a href="https://www.google.com/maps/place/<%=@spot.location %>/" target='_blank'>
     <p class='spot-address'><i class="fas fa-map-marked-alt"></i> <%= @spot.location %></p>
    </a>
-   <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %></div>
-   <button type="button" class="btn btn-primary tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">
-   TAG
-   </button>
+   <% if @result.count == 0 %>
+     <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %></div>
+    <% end %>
+  <button type="button" class="btn btn-primary tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">TAG</button>
 </div>
 <div class='spot-info-container'>
    <% if @spot.cover %>
