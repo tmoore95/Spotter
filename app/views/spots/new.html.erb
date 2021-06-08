@@ -7,6 +7,6 @@
   <%= f.input :ledge %>
   <%= f.input :cover %>
   <%= f.input :flatground %>
-  <%= f.input :photos, multiple: true, as: :file %>
+  <%= f.input :photo, input_html: { multiple: true }, as: :file %>
   <%= f.button :submit %>
 <% end %>
