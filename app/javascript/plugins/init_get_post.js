@@ -1,17 +1,18 @@
-const POST_URL = document.getElementById("tag_url")
-const APP_ID = "517239189416893"
-const CLIENT_TOKEN = "82dfc1d6a7fb3105b7f341b6629fe36a"
+const URL = document.getElementById("tag_url");
+const post = document.querySelector(".post");
 
 async function initGetPost() {
-  const response = await fetch(
-    "https://graph.facebook.com/v8.0/instagram_oembed?url=" +
-    POST_URL + "&omitscript=true&access_token=" + APP_ID + "|" +
-    CLIENT_TOKEN)
-  const data = await response.json()
+  var response = await fetch(
+    `http://iframe.ly/api/iframely?url=${URL.value}&api_key=a46dd56ea19aba4efa5511`)
+  var data = await response.json()
   console.log(data)
-  const myPostHtml = data.html
+  var myPostHtml = data.html
+  post.innerHTML = myPostHtml
 }
 
 export { initGetPost };
 
-{/* <div class="post"></div> */}
+{/* <div class="post"></div>
+<script async charset="utf-8"
+    src="https://platform.instagram.com/en_US/embeds.js" 
+></script> */}

@@ -30,7 +30,7 @@ import { initGetPost } from '../plugins/init_get_post';
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  initGetPost();
   // Call your functions here, e.g:
   // initSelect2();
-  initGetPost();
 });
