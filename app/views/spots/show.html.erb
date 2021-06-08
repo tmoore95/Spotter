@@ -1,6 +1,12 @@
 <div class='spot-main-banner shadow-lg'>
    <h5 class='spot-name'> <%= @spot.name %></h5>
-   <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %></div>
+   <div class='spot-dropin'>
+      <% if @result.count > 0 %>
+        <p class="btn btn-primary">DROPPED IN</p>
+      <% else %>
+        <%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %>  
+      <% end %>
+   </div>
    <button type="button" class="btn btn-success tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">
    TAG
    </button>
