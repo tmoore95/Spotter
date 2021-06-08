@@ -11,8 +11,3 @@ async function initGetPost() {
 }
 
 export { initGetPost };
-
-{/* <div class="post"></div>
-<script async charset="utf-8"
-    src="https://platform.instagram.com/en_US/embeds.js" 
-></script> */}
