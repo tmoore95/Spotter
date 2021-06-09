@@ -4,7 +4,7 @@
     <p class='spot-address'><i class="fas fa-map-marked-alt"></i> <%= @spot.location %></p>
    </a>
    <% if @result.count == 0 %>
-     <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %></div>
+     <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), remote: true, method: :post, class: 'btn-dropin btn btn-primary' %></div>
     <% end %>
   <button type="button" class="btn btn-primary tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">TAG</button>
 </div>
