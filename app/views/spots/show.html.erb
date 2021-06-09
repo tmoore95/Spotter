@@ -2,6 +2,19 @@
   <h5 class='spot-name'> <%= @spot.name %></h5>
   <a href="https://www.google.com/maps/place/<%=@spot.location %>/" target='_blank'>
     <p class='spot-address'><i class="fas fa-map-marked-alt"></i> <%= @spot.location %></p>
+   </a>
+   <% if current_skater.favorited?(@spot) %>
+    <%= link_to toggle_favorite_spot_path(@spot), remote: true, method: :post do %>
+        <i class="fas fa-heart" style="color: red;"></i>
+      <% end %>
+    <% else %>
+      <%= link_to toggle_favorite_spot_path(@spot), remote: true, method: :post do %>
+        <i class="fas fa-heart" style="color: white;"></i>
+      <% end %>
+    <% end %>
+   <% if @result.count == 0 %>
+     <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %></div>
+    <% end %>
   </a>
   <% if @result.count == 0 %>
   <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %></div>
@@ -77,6 +90,20 @@
 </div>
 <% end %>
 
+<script>
+  const heart = document.querySelector(".fa-heart")
+
+  heart.addEventListener("click", changeColour);
+
+  function changeColour() {
+    console.log(heart.style.color)
+    if (heart.style.color === "white") {
+      heart.style.color = "red";
+    } else {
+      heart.style.color = "white";
+    }
+  }
+</script>
 
    <script async charset="utf-8" src="https://platform.instagram.com/en_US/embeds.js" ></script>
 
