@@ -1,0 +1,55 @@
+.navbar-nav .dropdown-menu {
+  position: absolute;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+}
+
+.navbar {
+  min-height: 60px;
+}
+
+.nav { 
+  margin-bottom: 0; 
+}
+
+.dropdown {
+  position: static;
+}
+
+.dropup {
+    position: static;
+}
+
+.dropdown-menu {
+  width: 100%; 
+  text-align: center;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+ }
+
+.disabled {
+  margin: 0;
+}
+
+.dropdown-menu>li {
+  display: inline-block;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .boolean {
+    // TARGETS THE REMEMBER ME CLASS CREATED BY SIMPLE FORM
+    margin-bottom: 0;
+  }
+}
