@@ -40,11 +40,13 @@ $('.dropup').on('hide.bs.dropdown', function navBottomUp() {
 
 // External imports
 import "bootstrap";
+import { initGetPost } from '../plugins/init_get_post';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  initGetPost();
   // Call your functions here, e.g:
   // initSelect2();
   
