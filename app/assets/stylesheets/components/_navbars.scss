@@ -10,8 +10,8 @@
   min-height: 60px;
 }
 
-.nav { 
-  margin-bottom: 0; 
+.nav {
+  margin-bottom: 0;
 }
 
 .dropdown {
@@ -19,23 +19,23 @@
 }
 
 .dropup {
-    position: static;
+  position: static;
 }
 
 .dropdown-menu {
-  width: 100%; 
+  width: 100%;
   text-align: center;
   border: 0;
   border-radius: 0;
   margin: 0;
   padding: 0;
- }
+}
 
 .disabled {
   margin: 0;
 }
 
-.dropdown-menu>li {
+.dropdown-menu > li {
   display: inline-block;
 }
 
@@ -52,4 +52,9 @@
     // TARGETS THE REMEMBER ME CLASS CREATED BY SIMPLE FORM
     margin-bottom: 0;
   }
+}
+
+#spotter-logo {
+  font-family: "Staatliches", cursive;
+  letter-spacing: 2px;
 }
