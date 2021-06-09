@@ -2,6 +2,12 @@ class SpotsController < ApplicationController
     skip_before_action :authenticate_skater!, only: [:show, :index]
   def index
     @spots =  Spot.all
+    @markers = @spots.geocoded.map do |spot|
+      {
+        lat: spot.latitude,
+        lng: spot.longitude
+      }
+    end
   end
 
   def show
