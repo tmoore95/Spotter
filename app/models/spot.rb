@@ -4,4 +4,5 @@ class Spot < ApplicationRecord
   has_many :check_ins
   has_many_attached :photos
   validates :name, presence: true, length: { in: 3..30 }
+  acts_as_favoritable
 end

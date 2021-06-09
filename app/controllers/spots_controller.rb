@@ -45,6 +45,11 @@ class SpotsController < ApplicationController
     redirect_to root_path
   end
 
+  def toggle_favorite
+    @spot = Spot.find(params[:id])
+    current_skater.favorited?(@spot) ? current_skater.unfavorite(@spot) : current_skater.favorite(@spot)
+  end
+
   private
 
   def spot_params
