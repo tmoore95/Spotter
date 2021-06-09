@@ -10,9 +10,8 @@ const initGetPost = () => {
 
 let getPost = async function (url) {
   var response = await fetch(
-    `http://iframe.ly/api/iframely?url=${url.textContent}&api_key=a46dd56ea19aba4efa5511`)
+    `http://iframe.ly/api/iframely?url=${url.textContent}&api_key=` + process.env.["FRAMELY_API_KEY"])
   var data = await response.json()
-  console.log(data)
   var myPostHtml = data.html
   url.nextElementSibling.innerHTML = myPostHtml
 }
