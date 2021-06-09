@@ -7,6 +7,9 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     @tag = Tag.new
+    @tags = @spot.tags.all
+    @checked_in = CheckIn.all
+    @result = @checked_in.select {|c| c.skater_id == current_skater.id && (Time.now - c.created_at) < 20.seconds && c.spot_id == @spot.id }
   end
 
   def new
@@ -45,6 +48,6 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:name, :stairset, :security, :location, :cover, :ledge, :flatground, photo: [])
+    params.require(:spot).permit(:name, :description, :stairset, :security, :location, :cover, :ledge, :flatground, photos: [])
   end
 end
