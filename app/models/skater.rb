@@ -7,4 +7,6 @@ class Skater < ApplicationRecord
   has_many :tags
   has_many :check_ins
   # validates :username, presence: true, uniqueness: true
+  acts_as_favoritor
+  acts_as_favoritable
 end

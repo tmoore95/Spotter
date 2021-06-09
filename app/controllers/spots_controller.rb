@@ -5,11 +5,13 @@ class SpotsController < ApplicationController
   end
 
   def show
+    @current_skater = current_skater
     @spot = Spot.find(params[:id])
     @tag = Tag.new
     @tags = @spot.tags.all
     @checked_in = CheckIn.all
-    @result = @checked_in.select {|c| c.skater_id == current_skater.id && (Time.now - c.created_at) < 20.seconds && c.spot_id == @spot.id }
+    @result = @checked_in.select {|c| c.skater_id == current_skater.id && (Time.now - c.created_at) < 2.hours && c.spot_id == @spot.id }
+    @atm = @checked_in.select { |c| (Time.now - c.created_at) < 2.hours && c.spot_id == @spot.id }
   end
 
   def new
@@ -43,6 +45,11 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     @spot.destroy
     redirect_to root_path
+  end
+
+  def toggle_favorite
+    @spot = Spot.find(params[:id])
+    current_skater.favorited?(@spot) ? current_skater.unfavorite(@spot) : current_skater.favorite(@spot)
   end
 
   private
