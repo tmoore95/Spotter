@@ -31,7 +31,7 @@ spot2.photos.attach(io: file4, filename: 'st_pauls_london_a15ui9.jpg', content_t
 file5 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623335861/skate%20images%20file/holborn_garden2_j5l8oq.jpg')
 spot2.photos.attach(io: file5, filename: 'holborn_garden2_j5l8oq.jpg', content_type: 'jpg')
 file6 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623335863/skate%20images%20file/holborn_garden3_u95j0r.jpg')
-spot.photos.attach(io: file6, filename: 'holborn_garden3_u95j0r.jpg', content_type: 'jpg')
+spot2.photos.attach(io: file6, filename: 'holborn_garden3_u95j0r.jpg', content_type: 'jpg')
 spot2.save!
 spot3 = Spot.new(name: "Stratford Center!", stairset: false, ledge: false, cover: true, flatground: true, security: "High", location: "54A Broadway, London", skater: skater1,
 description: "Solid group of skaters from 5pm, anyone from beginners to semi-pro. Nice to skate when the weather is trash.")
@@ -119,35 +119,58 @@ description: "The car park out the back of brighton station is lit 24/7, relativ
 file24 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623339418/skate%20images%20file/station_car_park_brighton_xoa7az.jpg')
 spot18.photos.attach(io: file24, filename: 'station_car_park_brighton_xoa7az.jpg', content_type: 'jpg')
 spot18.save!
-spot18 = Spot.new(name: "South Bank Area", stairset: true, ledge: true, cover: true, flatground: true, security: "Low", location: "South Bank, London", skater: skate1,
-description: "Nestled cosily under the Southbank Center, this park is a hub for skaters. There’s always on onlooking crowd appreciating your stunts. The smooth roads ensure that you don’t accidentally trip from your skateboard.")
+spot19 = Spot.new(name: "South Bank Area", stairset: true, ledge: true, cover: true, flatground: true, security: "Low", location: "South Bank, London", skater: skater1,
+description: "Nestled cosily under the Southbank Center. There’s always on onlooking crowd appreciating your stunts. The smooth roads ensure that you don’t accidentally trip from your skateboard.")
 file25 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623340185/skate%20images%20file/southbank_london1_imvfch.jpg')
-spot18.photos.attach(io: file25, filename: 'southbank_london1_imvfch.jpg', content_type: 'jpg')
+spot19.photos.attach(io: file25, filename: 'southbank_london1_imvfch.jpg', content_type: 'jpg')
 file26 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623340186/skate%20images%20file/southbank_london2_ssbu8r.jpg')
-spot18.photos.attach(io: file26, filename: 'southbank_london2_ssbu8r.jpg', content_type: 'jpg')
+spot19.photos.attach(io: file26, filename: 'southbank_london2_ssbu8r.jpg', content_type: 'jpg')
 file27 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623340185/skate%20images%20file/southbank_london3_lz8vgu.jpg')
-spot18.photos.attach(io: file27, filename: 'southbank_london3_lz8vgu.jpg', content_type: 'jpg')
-spot18.save!
-
-spot18 = Spot.new(name: "Station Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Low", location: "Stroudley Road, Brighton", skater: skater1,
-description: "")
-spot18 = Spot.new(name: "Station Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Low", location: "Stroudley Road, Brighton", skater: skater2,
-description: "")
-spot18 = Spot.new(name: "Station Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Low", location: "Stroudley Road, Brighton", skater: skater4,
-description: "")
-spot18 = Spot.new(name: "Station Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Low", location: "Stroudley Road, Brighton", skater: skater5,
-description: "")
-spot18 = Spot.new(name: "Station Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Low", location: "Stroudley Road, Brighton", skater: skater5,
-description: "")
-
-
-
+spot19.photos.attach(io: file27, filename: 'southbank_london3_lz8vgu.jpg', content_type: 'jpg')
+spot19.save!
+spot20 = Spot.new(name: "Station Car Park", stairset: false, ledge: true, cover: false, flatground: true, security: "Low", location: "Regents Park, London", skater: skater1,
+description: "There is no better place than Regent’s Park if you are learning to use a roller blade or skateboard for the first time. The tree-lined pathways and nearby gardens make this a picturesque location for tourists.")
+file28 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623340797/skate%20images%20file/regents_park_london1_uevgy4.jpg')
+spot20.photos.attach(io: file28, filename: 'regents_park_london1_uevgy4.jpg', content_type: 'jpg')
+file29 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623340797/skate%20images%20file/regents_park_london2_us5h1u.jpg')
+spot20.photos.attach(io: file29, filename: 'regents_park_london2_us5h1u.jpg', content_type: 'jpg')
+file30 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623340798/skate%20images%20file/regents_park_london3_nopvpb.jpg')
+spot20.photos.attach(io: file30, filename: 'regents_park_london3_nopvpb.jpg', content_type: 'jpg')
+spot20.save!
+spot21 = Spot.new(name: "Canada Water Park", stairset: true, ledge: true, cover: false, flatground: true, security: "Medium", location: "Canada Water, London", skater: skater2,
+description: "Its wide-open space, along with smooth roads makes a perfect combination for skaters. There are also a few steps where you can grind and jump.")
+file31 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623341248/skate%20images%20file/canada_water_london1_rul37q.jpg')
+spot21.photos.attach(io: file31, filename: 'canada_water_london1_rul37q.jpg', content_type: 'jpg')
+file32 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623341251/skate%20images%20file/canada_water_london2_vcrvvr.jpg')
+spot21.photos.attach(io: file32, filename: 'canada_water_london2_vcrvvr.jpg', content_type: 'jpg')
+file33 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623341253/skate%20images%20file/canada_water_london3_pcqlcj.png')
+spot21.photos.attach(io: file33, filename: 'canada_water_london3_pcqlcj.jpg', content_type: 'jpg')
+spot21.save!
+spot22 = Spot.new(name: "Greenwich Wastelands", stairset: false, ledge: false, cover: false, flatground: true, security: "Low", location: "North Greenwich, London", skater: skater4,
+description: "Amazing fauna rich landscape for skating in. Little out the way from the city but worth a visit for a unique urban location.")
+file34 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623341735/skate%20images%20file/woolwich_london1_jayane.jpg')
+spot22.photos.attach(io: file34, filename: 'woolwich_london1_jayane.jpg', content_type: 'jpg')
+file35 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623341737/skate%20images%20file/woolwich_london2_wdmqcs.jpg')
+spot22.photos.attach(io: file35, filename: 'woolwich_london2_wdmqcs.jpg', content_type: 'jpg')
+file36 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623341738/skate%20images%20file/woolwich_london3_nxilu2.jpg')
+spot22.photos.attach(io: file36, filename: 'woolwich_london3_nxilu2.jpg', content_type: 'jpg')
+spot22.save!
+spot23 = Spot.new(name: "Beckenham Place Park", stairset: false, ledge: true, cover: false, flatground: true, security: "Low", location: "Old Bromley Rd, London", skater: skater5,
+description: "An abandoned BMX track has left a perfect playground for gaining speed and popping some nice tricks along the course.")
+file37 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623342422/skate%20images%20file/beckenham_place1_k0kl0n.jpg')
+spot23.photos.attach(io: file37, filename: 'beckenham_place1_k0kl0n.jpg', content_type: 'jpg')
+file38 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623342424/skate%20images%20file/beckenham_place2_ppo9al.jpg')
+spot23.photos.attach(io: file38, filename: 'beckenham_place2_ppo9al.jpg', content_type: 'jpg')
+file39 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623342422/skate%20images%20file/beckenham_place3_vnjmsc.jpg')
+spot23.photos.attach(io: file39, filename: 'beckenham_place3_vnjmsc.jpg', content_type: 'jpg')
+spot23.save!
+spot24 = Spot.new(name: "Abandoned Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Medium", location: "Marylebone Rd, London", skater: skater5,
+description: "If you can find your way in at night, it's a perfect place for groups of skaters who want some exclusivity. Great for filming, lit nicely at night.")
+file40 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623342806/skate%20images%20file/abandoned_car_park_london1_fsx2af.jpg')
+spot24.photos.attach(io: file40, filename: 'abandoned_car_park_london1_fsx2af.jpg', content_type: 'jpg')
+file41 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623342779/skate%20images%20file/abandoned_car_park_london2_kaewio.jpg')
+spot24.photos.attach(io: file41, filename: 'abandoned_car_park_london2_kaewio.jpg', content_type: 'jpg')
+file42 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623342779/skate%20images%20file/abandoned_car_park_london3_tlkf2a.jpg')
+spot24.photos.attach(io: file42, filename: 'abandoned_car_park_london3_tlkf2a.jpg', content_type: 'jpg')
+spot24.save!
 puts "spots created"
-
-file = URI.open('')
-spot.photos.attach(io: file, filename: '.jpg', content_type: 'jpg')
-file = URI.open('')
-spot.photos.attach(io: file, filename: '.jpg', content_type: 'jpg')
-file = URI.open('')
-spot.photos.attach(io: file, filename: '.jpg', content_type: 'jpg')
-spot.save!
