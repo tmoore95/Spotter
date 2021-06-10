@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
 puts "destroyed old seeds"
@@ -64,40 +57,91 @@ description: "Nice stair stack to mess around with, good flatground. Perfect on 
 file12 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623337038/skate%20images%20file/triangle_gardens_manchester_zmjhmh.jpg')
 spot6.photos.attach(io: file12, filename: 'triangle_gardens_manchester_zmjhmh.jpg', content_type: 'jpg')
 spot6.save!
-
-spot7 = Spot.create!(name: "Manch Oxford Road", stairset: false, ledge: true, cover: true, flatground: true, security: "Medium", location: "Oxford Road, Manchester", skater: skater2,
+spot7 = Spot.new(name: "Manch Oxford Road", stairset: false, ledge: true, cover: true, flatground: true, security: "Medium", location: "Oxford Road, Manchester", skater: skater2,
 description: "Excellent big curbs, under cover. In car park beneath bridge down the end of Oxford Road.")
-file = URI.open('')
-spot.photos.attach(io: file, filename: '.jpg', content_type: 'jpg')
-spot.save!
-spot8 = Spot.create!(name: "Urbis Banks", stairset: false, ledge: true, cover: true, flatground: false, security: "Low", location: "Todd St, Manchester", skater: skater2,
+file13 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623337396/skate%20images%20file/oxford_road_manchester_ognl5x.png')
+spot7.photos.attach(io: file13, filename: 'oxford_road_manchester_ognl5x.jpg', content_type: 'jpg')
+spot7.save!
+spot8 = Spot.new(name: "Urbis Banks", stairset: false, ledge: true, cover: true, flatground: false, security: "Low", location: "Todd St, Manchester", skater: skater2,
 description: "There's lots of ledges which are ranging in height, and some steps close by.. banging spot.")
-file = URI.open('')
-spot.photos.attach(io: file, filename: '.jpg', content_type: 'jpg')
-spot.save!
-spot9 = Spot.create!(name: "College Green", stairset: false, ledge: true, cover: false, flatground: true, security: "Low", location: "Park Street, Bristol", skater: skater3,
+file14 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623337392/skate%20images%20file/urbis_banks_manchester_r10vkx.jpg')
+spot8.photos.attach(io: file14, filename: 'urbis_banks_manchester_r10vkx.jpg', content_type: 'jpg')
+spot8.save!
+spot9 = Spot.new(name: "College Green", stairset: false, ledge: true, cover: false, flatground: true, security: "Low", location: "Park Street, Bristol", skater: skater3,
 description: "Flat ground is big enough to play a game of ‘SKATE’, small curbs along the side allow for some slappy grinds.")
-file = URI.open('')
-spot.photos.attach(io: file, filename: '.jpg', content_type: 'jpg')
-spot.save!
-# spot10 = Spot.create!(name: "Little Lloyds", stairset: true, ledge: true, cover: false, flatground: false, security: "None", location: "Castle Park, Bristol", skater: skater3,
-# description: "Can sometimes be blocked by parked cars but when it’s empty it can be a fun little spot. long 4 stairs are rough but rewarding.")
-# spot11 = Spot.create!(name: "College Car Park", stairset: false, ledge: false, cover: true, flatground: true, security: "High", location: "College Street, Bristol", skater: skater3,
-# description: "Perfect for a rainy day, full of smooth flat ground inside and out. Can sometimes be a bust when it comes to security.")
-# spot12 = Spot.create!(name: "Sefton Park", stairset: false, ledge: false, cover: false, flatground: true, security: "Low", location: "Sefton Park, Livepool", skater: skater4,
-# description: "Smooth paths that go around the outside are pretty nice (the ones that go inside it are pretty bumpy).")
-# spot13 = Spot.create!(name: "Otters Prom", stairset: false, ledge: true, cover: false, flatground: true, security: "None", location: "Otterspool Prommenade, Livepool", skater: skater4,
-# description: "Has some nice bits to skate on, but also quite a few bumpy bits and hills. Nice and quiet.")
-# spot14 = Spot.create!(name: "Canon Hill Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Medium", location: "Kings Norton, Birmingham", skater: skater5,
-# description: "As title says, car park in Kings Norton. Perfect to skate if the heavens open.")
-# spot15 = Spot.create!(name: "Barr Beacon", stairset: true, ledge: false, cover: false, flatground: true, security: "Low", location: "Pinfold Ln, Walsall", skater: skater5,
-# description: "Wicked bunch of stairs, can be quiet in weekdays.")
-# spot16 = Spot.create!(name: "Kiacre Car Parks", stairset: false, ledge: true, cover: false, flatground: true, security: "None", location: "Kidacre St, Leeds", skater: skater4,
-# description: "Near Crown point shopping center, some nice (mostly) empty car parks with high ledges.")
-# spot17 = Spot.create!(name: "War Memo Park", stairset: true, ledge: true, cover: false, flatground: true, security: "Medium", location: "War Memorial Park, Coventry", skater: skater5,
-# description: "75% of the paths around there are smooth, some lighting at night. Great stair stacks. Security quite often but just need to be careful.")
-# spot18 = Spot.create!(name: "Station Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Low", location: "Stroudley Road, Brighton", skater: skater5,
-# description: "The car park out the back of brighton station is lit 24/7, relatively remote as well. A few skaters their at night. There are less cars after business hours.")
+file15 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623337393/skate%20images%20file/college_green_bristol_qndksx.jpg')
+spot9.photos.attach(io: file15, filename: 'college_green_bristol_qndksx.jpg', content_type: 'jpg')
+spot9.save!
+
+spot10 = Spot.new(name: "Little Lloyds", stairset: true, ledge: true, cover: false, flatground: false, security: "Low", location: "Castle Park, Bristol", skater: skater3,
+description: "Can sometimes be blocked by parked cars but when it’s empty it can be a fun little spot. long 4 stairs are rough but rewarding.")
+file16 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623337890/skate%20images%20file/little_llyods_bristol_lnemht.jpg')
+spot10.photos.attach(io: file16, filename: 'little_llyods_bristol_lnemht.jpg', content_type: 'jpg')
+spot10.save!
+spot11 = Spot.new(name: "College Car Park", stairset: false, ledge: false, cover: true, flatground: true, security: "High", location: "College Street, Bristol", skater: skater3,
+description: "Perfect for a rainy day, full of smooth flat ground inside and out. Can sometimes be a bust when it comes to security.")
+file17 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623337877/skate%20images%20file/college_car_park_bristol_sndht8.jpg')
+spot11.photos.attach(io: file17, filename: 'college_car_park_bristol_sndht8.jpg', content_type: 'jpg')
+spot11.save!
+spot12 = Spot.new(name: "Sefton Park", stairset: false, ledge: false, cover: false, flatground: true, security: "Low", location: "Sefton Park, Livepool", skater: skater4,
+description: "Smooth paths that go around the outside are pretty nice (the ones that go inside it are pretty bumpy).")
+file18 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623337876/skate%20images%20file/sefton_park_liverpool_pv2iz6.jpg')
+spot12.photos.attach(io: file18, filename: 'sefton_park_liverpool_pv2iz6.jpg', content_type: 'jpg')
+spot12.save!
+spot13 = Spot.new(name: "Otters Prom", stairset: false, ledge: true, cover: false, flatground: true, security: "Low", location: "Otterspool Prommenade, Livepool", skater: skater4,
+description: "Has some nice bits to skate on, but also quite a few bumpy bits and hills. Nice and quiet.")
+file19 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623338798/skate%20images%20file/otters_prom_liverpool_d6x4su.jpg')
+spot13.photos.attach(io: file19, filename: 'otters_prom_liverpool_d6x4su.jpg', content_type: 'jpg')
+spot13.save!
+spot14 = Spot.new(name: "Canon Hill Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Medium", location: "Kings Norton, Birmingham", skater: skater5,
+description: "As title says, car park in Kings Norton. Perfect to skate if the heavens open.")
+file20 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623338798/skate%20images%20file/cannon_hill_park_birmingham_hnwfsj.jpg')
+spot14.photos.attach(io: file20, filename: 'cannon_hill_park_birmingham_hnwfsj.jpg', content_type: 'jpg')
+spot14.save!
+spot15 = Spot.new(name: "Barr Beacon", stairset: true, ledge: false, cover: false, flatground: true, security: "Low", location: "Pinfold Ln, Walsall", skater: skater5,
+description: "Wicked bunch of stairs, can be quiet in weekdays.")
+file21 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623338799/skate%20images%20file/barr_beacon_walsall_euay2d.jpg')
+spot15.photos.attach(io: file21, filename: 'barr_beacon_walsall_euay2d.jpg', content_type: 'jpg')
+spot15.save!
+
+spot16 = Spot.new(name: "Kiacre Car Parks", stairset: false, ledge: true, cover: false, flatground: true, security: "Low", location: "Kidacre St, Leeds", skater: skater4,
+description: "Near Crown point shopping center, some nice (mostly) empty car parks with high ledges.")
+file22 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623339419/skate%20images%20file/kiacre_car_park_leeds_vzbbdw.jpg')
+spot16.photos.attach(io: file22, filename: 'kiacre_car_park_leeds_vzbbdw.jpg', content_type: 'jpg')
+spot16.save!
+spot17 = Spot.new(name: "War Memo Park", stairset: true, ledge: true, cover: false, flatground: true, security: "Medium", location: "War Memorial Park, Coventry", skater: skater5,
+description: "75% of the paths around there are smooth, some lighting at night. Great stair stacks. Security quite often but just need to be careful.")
+file23 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623339417/skate%20images%20file/war_memo_park_coventry_e7t1iu.jpg')
+spot17.photos.attach(io: file23, filename: 'war_memo_park_coventry_e7t1iu.jpg', content_type: 'jpg')
+spot17.save!
+spot18 = Spot.new(name: "Station Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Low", location: "Stroudley Road, Brighton", skater: skater5,
+description: "The car park out the back of brighton station is lit 24/7, relatively remote as well. A few skaters their at night. There are less cars after business hours.")
+file24 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623339418/skate%20images%20file/station_car_park_brighton_xoa7az.jpg')
+spot18.photos.attach(io: file24, filename: 'station_car_park_brighton_xoa7az.jpg', content_type: 'jpg')
+spot18.save!
+spot18 = Spot.new(name: "South Bank Area", stairset: true, ledge: true, cover: true, flatground: true, security: "Low", location: "South Bank, London", skater: skate1,
+description: "Nestled cosily under the Southbank Center, this park is a hub for skaters. There’s always on onlooking crowd appreciating your stunts. The smooth roads ensure that you don’t accidentally trip from your skateboard.")
+file25 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623340185/skate%20images%20file/southbank_london1_imvfch.jpg')
+spot18.photos.attach(io: file25, filename: 'southbank_london1_imvfch.jpg', content_type: 'jpg')
+file26 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623340186/skate%20images%20file/southbank_london2_ssbu8r.jpg')
+spot18.photos.attach(io: file26, filename: 'southbank_london2_ssbu8r.jpg', content_type: 'jpg')
+file27 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623340185/skate%20images%20file/southbank_london3_lz8vgu.jpg')
+spot18.photos.attach(io: file27, filename: 'southbank_london3_lz8vgu.jpg', content_type: 'jpg')
+spot18.save!
+
+spot18 = Spot.new(name: "Station Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Low", location: "Stroudley Road, Brighton", skater: skater1,
+description: "")
+spot18 = Spot.new(name: "Station Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Low", location: "Stroudley Road, Brighton", skater: skater2,
+description: "")
+spot18 = Spot.new(name: "Station Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Low", location: "Stroudley Road, Brighton", skater: skater4,
+description: "")
+spot18 = Spot.new(name: "Station Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Low", location: "Stroudley Road, Brighton", skater: skater5,
+description: "")
+spot18 = Spot.new(name: "Station Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Low", location: "Stroudley Road, Brighton", skater: skater5,
+description: "")
+
+
+
 puts "spots created"
 
 file = URI.open('')
