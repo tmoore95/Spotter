@@ -1,0 +1,19 @@
+
+.filter-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  .form-group {
+    margin: 4px;
+    display: inline;
+  }
+}
+
+.btn {
+  margin: 9px;
+}
+  
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px 12px 12px;
+}
