@@ -11,10 +11,12 @@
     <% if current_skater.favorited?(@spot) %>
       <%= link_to toggle_favorite_spot_path(@spot), remote: true, method: :post do %>
           <i class="fas fa-heart" style="color: red;"></i>
+            <span class='favorite-count'><%= @spot.favoritors.count %></span>
         <% end %>
       <% else %>
         <%= link_to toggle_favorite_spot_path(@spot), remote: true, method: :post do %>
           <i class="fas fa-heart" style="color: white;"></i>
+          <span class='favorite-count'><%= @spot.favoritors.count %></span>
         <% end %>
       <% end %>
     <% if @result.count == 0 %>
@@ -101,6 +103,8 @@
 
 <script>
   const heart = document.querySelector(".fa-heart")
+  const count = document.querySelector(".favorite-count")
+
 
   heart.addEventListener("click", changeColour);
 
@@ -108,8 +112,10 @@
     console.log(heart.style.color)
     if (heart.style.color === "white") {
       heart.style.color = "red";
+      count.textContent = parseInt(count.textContent) + 1;
     } else {
       heart.style.color = "white";
+      count.textContent = parseInt(count.textContent) - 1;
     }
   }
 </script>
