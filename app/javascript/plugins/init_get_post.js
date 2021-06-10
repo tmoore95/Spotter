@@ -1,10 +1,12 @@
 const URL = document.getElementById("tag_url");
 const post = document.querySelector(".post");
 
+
 const initGetPost = () => {
   const urls = document.querySelectorAll(".urlbb");
   urls.forEach((url) => {
    getPost(url)
+    console.log(url.textContent)
   })
 }
 
