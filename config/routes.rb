@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :skaters
   post "spots/:id", to: "tags#create", as: "new_tag"
   post "skaters/:id", to: "pages#toggle_favorite", as: "toggle_favorite_skater"
+  get "/feed", to: "pages#feed", as: "feed"
 end
