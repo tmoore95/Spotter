@@ -9,9 +9,11 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     @tag = Tag.new
     @tags = @spot.tags.all
-    @checked_in = CheckIn.all
-    @result = @checked_in.select {|c| c.skater_id == current_skater.id && (Time.now - c.created_at) < 2.hours && c.spot_id == @spot.id }
-    @atm = @checked_in.select { |c| (Time.now - c.created_at) < 2.hours && c.spot_id == @spot.id }
+    if @current_skater
+      @checked_in = CheckIn.all
+      @result = @checked_in.select {|c| c.skater_id == current_skater.id && (Time.now - c.created_at) < 2.hours && c.spot_id == @spot.id }
+      @atm = @checked_in.select { |c| (Time.now - c.created_at) < 2.hours && c.spot_id == @spot.id }
+    end
   end
 
   def new

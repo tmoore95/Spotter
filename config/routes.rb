@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   end
   resources :skaters
   post "spots/:id", to: "tags#create", as: "new_tag"
+  get "/feed", to: "pages#feed", as: "feed"
 end
