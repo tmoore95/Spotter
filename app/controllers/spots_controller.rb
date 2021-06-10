@@ -1,7 +1,26 @@
 class SpotsController < ApplicationController
     skip_before_action :authenticate_skater!, only: [:show, :index]
   def index
-    @spots =  Spot.all
+
+    if params[:filters].present?
+      filters = {
+        stairset: (params[:filters][:stairset] == "1"),
+        ledge: (params[:filters][:ledge] == "1"),
+        cover: (params[:filters][:cover] == "1"),
+        flatground: (params[:filters][:flatground] == "1")
+      }
+      @spots = Spot.where(filters.select { |_k, v| v })
+    else
+      @spots =  Spot.all
+    end
+
+    @markers = @spots.geocoded.map do |spot|
+      {
+        lat: spot.latitude,
+        lng: spot.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { spot: spot })
+      }
+    end
   end
 
   def show
