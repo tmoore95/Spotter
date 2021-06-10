@@ -1,4 +1,8 @@
-<div class='spot-main-banner shadow-lg'  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @spot.photos.first.present? ? cl_image_path(@spot.photos.first.key) : "https://coresites-cdn-adm.imgix.net/sidewalk/wp-content/uploads/2017/08/benson-Cardiff-wallie-Photo-Horse.jpg" %>')">
+<% if @spot.photos.first != nil %>
+<div class='spot-main-banner shadow-lg'  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @spot.photos.first.key %>')">
+  <% else %>
+  <div class='spot-main-banner shadow-lg'  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.skateparks.co.uk/wp-content/uploads/2018/11/Acton-Skatepark-1.jpeg')">
+  <% end %>
   <h5 class='spot-name'> <%= @spot.name %></h5>
   <a href="https://www.google.com/maps/place/<%=@spot.location %>/" target='_blank'>
     <p class='spot-address'><i class="fas fa-map-marked-alt"></i> <%= @spot.location %></p>
