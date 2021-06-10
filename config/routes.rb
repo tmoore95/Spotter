@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'spots/index'
   devise_for :skaters 
   get "skaters/:id", to: "pages#profile"
-  root to: 'pages#home'
+  root to: 'spots#index'
   resources :spots do
     resources :check_ins, only: :create
     member do
