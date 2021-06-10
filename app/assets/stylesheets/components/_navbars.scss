@@ -7,11 +7,19 @@
 }
 
 .navbar {
-  min-height: 60px;
+  min-height: 90px;
+}
+
+.navbar-brand {
+  font-size: 28px;
 }
 
 .nav {
   margin-bottom: 0;
+}
+
+.nav-link {
+  font-size: 20px;
 }
 
 .dropdown {
@@ -52,6 +60,14 @@
     // TARGETS THE REMEMBER ME CLASS CREATED BY SIMPLE FORM
     margin-bottom: 0;
   }
+}
+
+.mapboxgl-ctrl-geocoder {
+  margin: 10px 0;
+}
+
+.btn {
+  font-size: 20px;
 }
 
 #spotter-logo {

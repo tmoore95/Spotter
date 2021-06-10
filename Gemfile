@@ -63,4 +63,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'cloudinary', '~> 1.16.0'
 
+# MAP GEMS
+gem 'geocoder'
+
 gem 'acts_as_favoritor'
+
