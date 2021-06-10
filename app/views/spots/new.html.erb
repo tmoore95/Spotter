@@ -1,12 +1,26 @@
+<style>
+.spot_cover, .spot_stairset, .spot_cover, .spot_ledge, .spot_flatground{
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 5px;
+  margin-top: 15px;
+}
+</style>
+
+<div class='container mt-4'>
+
 <%= simple_form_for @spot, html: { class: "col-sm-6 offset-sm-3" } do |f| %>
   <%= f.input :name %>
   <%= f.input :location %>
   <%= f.input :description %>
-  <%= f.input :security, collection: %w[None Calm Low Medium High Bust] %>
+  <%= f.input :security, collection: %w[Low Medium High] %>
+  <div>Features</div>
   <%= f.input :stairset %>
   <%= f.input :ledge %>
   <%= f.input :cover %>
   <%= f.input :flatground %>
-  <%= f.input :photo, input_html: { multiple: true }, as: :file %>
-  <%= f.button :submit %>
+  <%= f.input :photos, input_html: { multiple: true }, as: :file %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
+
+</div>

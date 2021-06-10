@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Spotter</a>
+  <a id='spotter-logo' class="navbar-brand" href="#">🛹 Spotter</a>
   <%# removed this class from here navbar-collapse %>
   <div id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -11,7 +11,7 @@
 
         <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://pm1.narvii.com/6306/ea8d71fb049d9d3c75ee0ad84d16a913f6f53a8b_128.jpg" />
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <p class="dropdown-item disabled user"><%= current_skater.email %></p>
+            <p class="dropdown-item disabled user"><%= current_skater.username %></p>
             <%= link_to "Profile", skater_path(current_skater), class: "dropdown-item" %>
             <%= link_to "Sign Out", destroy_skater_session_path, method: :delete, class: "dropdown-item" %>
           </div>
