@@ -40,6 +40,7 @@ const initMapbox = () => {
   fitMapToMarkers(map, markers);
 
   map.scrollZoom.disable();
+  map.addControl(new mapboxgl.NavigationControl());
 
   var geocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
