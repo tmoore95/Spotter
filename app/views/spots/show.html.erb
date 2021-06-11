@@ -121,38 +121,9 @@
    </div>
 </div>
 <% end %>
-<script>
-   const heart = document.querySelector(".fa-heart")
-   const count = document.querySelector(".favorite-count")
-   
-   
-   heart.addEventListener("click", changeColour);
-   
-   function changeColour() {
-     console.log(heart.style.color)
-     if (heart.style.color === "white") {
-       heart.style.color = "red";
-       count.textContent = parseInt(count.textContent) + 1;
-     } else {
-       heart.style.color = "white";
-       count.textContent = parseInt(count.textContent) - 1;
-     }
-   }
-   
-   
-</script>
+
+<%= javascript_pack_tag "like" %>
+
+<%= javascript_pack_tag "swal" %>
+
 <script async charset="utf-8" src="https://platform.instagram.com/en_US/embeds.js" ></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="sweetalert2.min.js"></script>
-<script>
-   const name = document.querySelector('.spot-name').textContent
-   const notif = function(){
-   Swal.fire(
-     `You've dropped in to ${name}!`
-   )
-   }
-   const drop = document.querySelector('.spot-dropin')
-   if (!drop) {
-     notif();
-   }
-</script>
