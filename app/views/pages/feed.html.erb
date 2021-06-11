@@ -4,7 +4,9 @@
       <% @spot = Spot.find(instance.spot_id) %>
       <% @skater = Skater.find(instance.skater_id) %>
       <% @time = instance.created_at %>
-      <p><%= @skater.username %> dropped in to <%= link_to spot_path(@spot) do %>
+      <p><%= link_to skater_path(@skater) do %>
+        <strong><%= @skater.username %></strong>
+      <% end %> dropped in to <%= link_to spot_path(@spot) do %>
         <strong><%= @spot.name %></strong>
       <% end %>
       <%= time_ago_in_words(@time) %> ago</p>
@@ -12,7 +14,9 @@
       <% @spot = Spot.find(instance.id) %>
       <% @skater = Skater.find(instance.skater_id) %>
       <% @time = instance.created_at %>
-      <p><%= @skater.username %> liked <%= link_to spot_path(@spot) do %>
+      <p><%= link_to skater_path(@skater) do %>
+        <strong><%= @skater.username %></strong>
+      <% end %> liked <%= link_to spot_path(@spot) do %>
         <strong><%= @spot.name %></strong>
       <% end %> 
       <%= time_ago_in_words(@time) %> ago</p>
@@ -20,7 +24,9 @@
       <% @spot = Spot.find(instance.spot_id) %>
       <% @skater = Skater.find(instance.skater_id) %>
       <% @time = instance.created_at %>
-      <p><%= @skater.username %> tagged <%= link_to spot_path(@spot) do %>
+      <p><%= link_to skater_path(@skater) do %>
+        <strong><%= @skater.username %></strong>
+      <% end %> tagged <%= link_to spot_path(@spot) do %>
         <strong><%= @spot.name %></strong>
       <% end %>
       <%= time_ago_in_words(@time) %> ago</p>
