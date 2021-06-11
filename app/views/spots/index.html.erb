@@ -1,25 +1,25 @@
+<div>
+  <div id="map"
+    style="width: 375px; height: 437px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
-<div id="map"
-  style="width: 375px; height: 437px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <%= simple_form_for :filters, url: spots_path, method: :get do |f| %>
+
+  <div class="filter-container">
+
+
+    <div class="filter-options">
+      <%= f.input :stairset, as: :boolean, input_html: { checked: params.dig(:filters, :stairset) == "1" } %>  
+      <%= f.input :ledge, as: :boolean, input_html: { checked: params.dig(:filters, :ledge) == "1" } %>
+      <%= f.input :cover, as: :boolean, input_html: { checked: params.dig(:filters, :cover) == "1" } %>
+      <%= f.input :flatground, as: :boolean, input_html: { checked: params.dig(:filters, :flatground) == "1" } %>
+    </div>
+
+
+    <%= f.submit "Filter", class: "btn btn-secondary" %>
+    </div>
+  <% end %>
 </div>
-
-<%= simple_form_for :filters, url: spots_path, method: :get do |f| %>
-
-<div class="filter-container">
-
-
-  <div class="filter-options">
-    <%= f.input :stairset, as: :boolean, input_html: { checked: params.dig(:filters, :stairset) == "1" } %>  
-    <%= f.input :ledge, as: :boolean, input_html: { checked: params.dig(:filters, :ledge) == "1" } %>
-    <%= f.input :cover, as: :boolean, input_html: { checked: params.dig(:filters, :cover) == "1" } %>
-    <%= f.input :flatground, as: :boolean, input_html: { checked: params.dig(:filters, :flatground) == "1" } %>
-  </div>
-
-
-  <%= f.submit "Filter", class: "btn btn-secondary" %>
-  </div>
-
-<% end %>
 
