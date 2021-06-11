@@ -1,2 +1,23 @@
-<h2><%= spot.name %></h2>
-<p><%= spot.location %></p>
+
+<a href='/spots/<%=spot.id%>'>
+  <h4><%= spot.name %></h4>
+</a>
+
+<%# TOOK OUT THE LOCATION %>
+<%# <p><%= spot.location ADD P END! %>
+
+<div class="popup-icons">
+    <% if spot.cover %>
+    <p><i class="bi bi-cloud-lightning-rain-fill"></i> cover</p>
+    <%end%>
+    <% if spot.flatground %>
+    <p><i class="fas fa-grip-lines"></i> flat</p>
+    <%end%>
+    <% if spot.stairset %>
+    <p><i class="bi bi-bar-chart-steps"></i> stairset</p>
+    <%end%>
+    <% if spot.ledge %>
+    <p><i class="fas fa-tenge"></i> ledge</p>
+    <%end%>
+    <p><i class="fas fa-hand-paper"></i> <%= spot.security.downcase %></p>
+  </div>
