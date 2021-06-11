@@ -90,9 +90,9 @@
 </div>
 <% @tags.each do |t| %>
 <div class="tag-photo-container">
-  <div class='tag-card-head'>
+  <div class='tag-card-head p-2'>
     <p><%= t.caption %></p>
-    <p><%= t.skater.username %></p>
+    <a href="/skaters/<%= t.skater_id %>"><p>@<%= t.skater.username %></p></a>
    </div>
   <div class="urlbb"><%= t.url %></div>
     <div class="tag-photo">

@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a id='spotter-logo' class="navbar-brand" href="#">🛹 Spotter</a>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a id='spotter-logo' class="navbar-brand" href="/">🛹 Spotter</a>
   <%# removed this class from here navbar-collapse %>
   <div id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -9,7 +9,7 @@
         <% if current_skater %>
 
 
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://pm1.narvii.com/6306/ea8d71fb049d9d3c75ee0ad84d16a913f6f53a8b_128.jpg" />
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://sm.ign.com/t/ign_ap/articlepage/t/tony-hawk-/tony-hawk-5-is-coming-later-this-year_fysz.1280.jpg" />
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <p class="dropdown-item disabled user"><%= current_skater.username %></p>
             <%= link_to "Profile", skater_path(current_skater), class: "dropdown-item" %>
