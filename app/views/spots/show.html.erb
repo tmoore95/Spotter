@@ -1,3 +1,23 @@
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '517239189416893',
+      xfbml      : true,
+      version    : 'v11.0'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
 <% if @spot.photos.first != nil %>
 <div class='spot-main-banner shadow-lg'  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @spot.photos.first.key %>')">
   <% else %>
