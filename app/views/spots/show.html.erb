@@ -40,11 +40,7 @@
    <% end %>
    <% end %>
    <% if @result.count == 0 %>
-   <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %></div>
-   <% end %>
-   </a>
-   <% if @result.count == 0 %>
-   <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %></div>
+    <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %></div>
    <% end %>
    <% if @current_skater %>
    <button type="button" class="btn btn-primary tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">TAG</button>
