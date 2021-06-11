@@ -4,6 +4,9 @@
   border: 0;
   border-radius: 0;
   margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: lightslategrey;
 }
 
 .navbar {
@@ -51,6 +54,9 @@
 .footer-menu {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 85px;
+  background-color: lightslategrey;
 }
 
 .login-buttons {
@@ -74,4 +80,9 @@
 #spotter-logo {
   font-family: "Staatliches", cursive;
   letter-spacing: 2px;
+  color: white;
+}
+
+.dropdown-item {
+  color: white;
 }
