@@ -40,10 +40,10 @@
    <% end %>
    <% end %>
    <% if @result.count == 0 %>
-    <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %></div>
+    <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-normal tag-btn-dropin' %></div>
    <% end %>
    <% if @current_skater %>
-   <button type="button" class="btn btn-primary tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">TAG</button>
+   <button type="button" class="btn-normal tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">TAG</button>
    <% end %>
    <% end %>
 </div>
@@ -90,14 +90,14 @@
                   <%= simple_form_for @tag, url: new_tag_path, html: { class: "col-sm-6 offset-sm-3" } do |f| %>
                   <%= f.input :url %>
                   <%= f.input :caption %>
-                  <%= f.button :submit, class: 'btn btn-primary' %>
+                  <%= f.button :submit, class: 'btn-cta' %>
                   <% end %>
                </div>
             </div>
          </div>
          <!-- Modal Footer -->
          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn-normal" data-dismiss="modal">Close</button>
          </div>
       </div>
       <!-- Modal Content: ends -->
