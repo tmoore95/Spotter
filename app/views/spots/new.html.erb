@@ -5,12 +5,23 @@
   margin-left: 5px;
   margin-top: 15px;
 }
+
+.suggestions-wrapper {
+   display: block;
+}
+
+.mapboxgl-ctrl-geocoder {
+   width: 60%;
+}
+
+
 </style>
 
 <div class='container my-4'>
 
 <%= simple_form_for @spot, html: { class: "col-sm-6 offset-sm-3" } do |f| %>
   <%= f.input :name %>
+  <button type="button" class="btn btn-primary tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">Location</button>
   <%= f.input :location %>
   <%= f.input :description %>
   <%= f.input :security, collection: %w[Low Medium High] %>
@@ -20,7 +31,38 @@
   <%= f.input :cover %>
   <%= f.input :flatground %>
   <%= f.input :photos, input_html: { multiple: true }, as: :file %>
+   
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
 
+</div>
+
+
+
+<%# MAP MODAL! %>
+<div class="modal fade bs-example-modal-new" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <!-- Modal Content: begins -->
+      <div class="modal-content">
+         <!-- Modal Header -->
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         </div>
+         <!-- Modal Body -->  
+         <div class="modal-body">
+            <div class="body-message">
+              <div class="geocoder" id="geocoder" style="width: 100%;"></div>
+              <div id="spot_map"
+              style="width: 325.33px; height: 340px;"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+              </div>
+            </div>
+         </div>
+         <!-- Modal Footer -->
+         <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+         </div>
+      </div>
+      <!-- Modal Content: ends -->
+   </div>
 </div>

@@ -17,6 +17,21 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/streets-v10'
     });
 
+    map.addControl(new mapboxgl.NavigationControl());
+
+    const geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl,
+      // marker: {
+      //   // CAN CHANGE SEARCH COLOR HERE
+      //   draggable: true
+      // }
+    });
+    
+
+    const searchBar = document.getElementById('geocoder')
+    searchBar.appendChild(geocoder.onAdd(map));
+
     const markers = JSON.parse(mapElement.dataset.markers);
 
     markers.forEach((marker) => {
@@ -40,15 +55,9 @@ const initMapbox = () => {
   fitMapToMarkers(map, markers);
 
   map.scrollZoom.disable();
-  map.addControl(new mapboxgl.NavigationControl());
+  
 
-  var geocoder = new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl
-  });
 
-  const searchBar = document.getElementById('geocoder')
-  searchBar.appendChild(geocoder.onAdd(map));
 
   }
 };

@@ -43,8 +43,10 @@ import { initGetPost } from "../plugins/init_get_post";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from "../plugins/init_mapbox";
+import { initNewspotMapbox } from "../plugins/init_newspot_mapbox"
 
 document.addEventListener("turbolinks:load", () => {
   initGetPost();
   initMapbox();
+  initNewspotMapbox();
 });
