@@ -34,6 +34,8 @@
   position: absolute;
   bottom: 0px;
   right: 46px;
+  bottom: 10px;
+  text-align: center;
 }
 
 .btn-dropin {
@@ -112,11 +114,21 @@
 }
 
 .tag-btn {
-  position: absolute;
+
   bottom: 0px;
   right: -4px;
   font-size: 10px;
   background-color: #239e33;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+}
+
+.tag-btn-dropin {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  font-size: 12px;
 }
 
 .fa-heart {
