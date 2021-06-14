@@ -12,7 +12,10 @@ const initNewspotMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'spot_map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/mapbox/streets-v10',
+      // ADDED this. THINK IT IS FINE
+      center: [1.31222, 51.1275],
+      zoom: 3
     });
 
     
@@ -24,6 +27,7 @@ const initNewspotMapbox = () => {
       mapboxgl: mapboxgl,
       accessToken: mapboxgl.accessToken,
       marker: false,
+      // LIMITS THE SEARCH TO GB
       countries: 'gb',
       flyTo: {
         speed: 2,

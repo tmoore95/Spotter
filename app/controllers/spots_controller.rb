@@ -9,6 +9,10 @@ class SpotsController < ApplicationController
         cover: (params[:filters][:cover] == "1"),
         flatground: (params[:filters][:flatground] == "1")
       }
+      if params[:filters][:center]
+        @map_center = params[:filters][:center]
+      end
+      
       @spots = Spot.where(filters.select { |_k, v| v })
     else
       @spots =  Spot.all
