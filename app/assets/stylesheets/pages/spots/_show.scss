@@ -32,9 +32,8 @@
 
 .spot-dropin {
   position: absolute;
-  bottom: 0px;
+  bottom: -1px;
   right: 46px;
-  bottom: 10px;
   text-align: center;
 }
 
@@ -114,21 +113,18 @@
 }
 
 .tag-btn {
-
-  bottom: 0px;
-  right: -4px;
-  font-size: 10px;
+  position: absolute;
   background-color: #239e33;
-  bottom: 10px;
-  right: 10px;
-  font-size: 12px;
+  bottom: -1px;
+  right: -6px;
+  font-size: 10px;
 }
 
 .tag-btn-dropin {
   position: absolute;
   right: 10px;
   bottom: 0px;
-  font-size: 12px;
+  height: 28px;
 }
 
 .fa-heart {
@@ -197,6 +193,7 @@
   color: #262626;
 }
 
+
 input:focus::placeholder {
   color: transparent;
 }
@@ -225,4 +222,20 @@ input:focus::placeholder {
 .spot-background {
   background-color: rgb(155, 155, 155);
   font-family: "Staatliches", cursive;
+}
+
+.dropped-in {
+  font-size: 10px;
+  border: 1px solid grey;
+  background-color: whitesmoke;
+  color: grey;
+  padding: 5px;
+  padding-right: 11px;
+  padding-left: 11px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 12px;
+  right: 58px;
 }

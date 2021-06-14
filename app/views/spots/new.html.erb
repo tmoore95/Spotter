@@ -5,7 +5,18 @@
   margin-left: 5px;
   margin-top: 15px;
 }
+
+.suggestions-wrapper {
+   display: block;
+}
+
+.mapboxgl-ctrl-geocoder {
+   width: 60%;
+}
+
+
 </style>
+
 
 <div class='container spot-background'>
   <div class="new-spot-padding">
@@ -15,6 +26,8 @@
           <h1 class="new-spot-title">Create a spot</h1>
           <%= simple_form_for @spot, html: { class: "col-sm-6 offset-sm-3" } do |f| %>
           <%= f.input :name, label: false, placeholder: "Spot name" %>
+<!--           ADDED THIS BUTTON IN! - ALEX -->
+          <button type="button" class="btn btn-primary tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">Choose on map</button>
           <%= f.input :location, label: false, placeholder: "Location" %>
           <%= f.input :description, label: false, placeholder: "Description" %>
           <%= f.input :security, collection: %w[Low Medium High] %>
@@ -34,4 +47,36 @@
   </div>
   </div>
   <% end %>
+
+</div>
+
+
+
+<%# MAP MODAL! %>
+<div class="modal fade bs-example-modal-new" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <!-- Modal Content: begins -->
+      <div class="modal-content">
+         <!-- Modal Header -->
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         </div>
+         <!-- Modal Body -->  
+         <div class="modal-body">
+            <div class="body-message">
+              <div class="geocoder" id="geocoder" style="width: 100%;"></div>
+              <div id="spot_map"
+              style="width: 325.33px; height: 340px;"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+              </div>
+            </div>
+         </div>
+         <!-- Modal Footer -->
+         <div class="modal-footer">
+            <p>Search and refine, then =></p>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+         </div>
+      </div>
+      <!-- Modal Content: ends -->
+   </div>
 </div>

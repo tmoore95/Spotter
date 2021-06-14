@@ -16,7 +16,6 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-<link rel="stylesheet" href="sweetalert2.min.css">
 <% if @spot.photos.first != nil %>
 <div class='spot-main-banner shadow-lg'  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @spot.photos.first.key %>')">
 <% else %>
@@ -40,6 +39,8 @@
   <% end %>
   <% if @result.count == 0 %>
   <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %></div>
+  <% else %>
+  <div class='dropped-in'>DROPPED IN</div>
   <% end %>
   <% if @current_skater %>
   <button type="button" class="btn btn-primary tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">TAG</button>
@@ -84,7 +85,7 @@
   </div>
 </a>
 <div class='spot-description-container'>
-  <h6 class='spot-description-header'><i class="fas fa-info-circle"></i> &nbsp INTEL</h6>
+  <h6 class='spot-description-header'><i class="fas fa-info-circle"></i> &nbsp INFO</h6>
   <p class='spot-description-body'><%= @spot.description %></p>
 </div>
 <div class="modal fade bs-example-modal-new" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -134,5 +135,4 @@
   <% end %>
 </div>
 <%= javascript_pack_tag "like" %>
-<%= javascript_pack_tag "swal" %>
 <script async charset="utf-8" src="https://platform.instagram.com/en_US/embeds.js" ></script>
