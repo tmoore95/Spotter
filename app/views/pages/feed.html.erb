@@ -1,6 +1,9 @@
+<h6 class='feed-title'>feed <i class="bi bi-rss blink_me "></i></h6>
+
 <div class="feed">
   <% @activity.each do |instance| %>
-    <div class="feed-card m-4 border pt-2 pl-2 pr-2">
+    <div class="feed-card">
+      <img class='feed-avatar' src="https://pbs.twimg.com/profile_images/1325015260/1979_driveway_fs_stink.jpg" alt="">
       <% if instance.class.name == "CheckIn" %>
         <% @spot = Spot.find(instance.spot_id) %>
         <% @skater = Skater.find(instance.skater_id) %>
@@ -35,4 +38,3 @@
     </div>
   <% end %>
 </div>
-

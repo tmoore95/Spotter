@@ -1,8 +1,12 @@
+
+<% if @skater == @current_skater %>
+  <h6 class='feed-title'>MY PROFILE</h6>
+<% end %>
 <div class='container mt-3 profile-header'>
   <img class='avatar-profile' src="https://sm.ign.com/t/ign_ap/articlepage/t/tony-hawk-/tony-hawk-5-is-coming-later-this-year_fysz.1280.jpg" alt="">
   <div>
     <div class='skater-main-info'>
-      <p class='skater-username'>@<%= @skater.username  %></p>
+      <p class='skater-username'><%= @skater.username  %></p>
       <% if @current_skater != @skater %>
       <% if current_skater.favorited?(@skater) %>
       <%= link_to toggle_favorite_skater_path(@skater), class: 'follow-btn', remote: true, method: :post do %>Unfollow<% end %>
@@ -19,7 +23,7 @@
 </div>
 <% if @skater.favorited_spots.count != 0 %>
 <div class='container mt-4 profile-favorite-spots'>
-  <h6 class='profile-seperator mb-3'>| Favourite Spots</h6>
+  <h6 class='profile-seperator mb-3'><i class="fas fa-bookmark"></i> &nbsp Favourite Spots (<%= @skater.favorited_spots.count %>)</h6>
   <% @skater.favorited_spots.each do |spot| %>
   <a href="/spots/<%= spot.id %>">
     <div class='favorite-spot'>
@@ -29,6 +33,24 @@
       <img class='favorite-spot-thumb' src="https://www.skateparks.co.uk/wp-content/uploads/2018/11/Acton-Skatepark-1.jpeg" alt="">
       <% end %>
       <p><%= spot.name %></p>
+    </div>
+  </a>
+  <% end %>
+</div>
+<% end %>
+
+<% if @skater.tags.count != 0 %>
+<div class='container mt-4 profile-favorite-spots mb-4'>
+  <h6 class='profile-seperator mb-3'><i class="fas fa-video"></i> &nbsp Recent Tags</h6>
+  <% @skater.tags.last(3).each do |tag| %>
+  <a href="/spots/<%= tag.spot_id %>">
+    <div class='favorite-spot'>
+      <% if tag.spot.photos.first != nil %>
+      <img class='favorite-spot-thumb' src="<%= cl_image_path tag.spot.photos.first.key %>" alt="">
+      <% else %>
+      <img class='favorite-spot-thumb' src="https://www.skateparks.co.uk/wp-content/uploads/2018/11/Acton-Skatepark-1.jpeg" alt="">
+      <% end %>
+      <p><%= tag.spot.name %></p>
     </div>
   </a>
   <% end %>
