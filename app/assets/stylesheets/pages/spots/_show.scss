@@ -192,3 +192,50 @@
 .tag-label {
   color: #262626;
 }
+
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.center-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.form-margin {
+  margin-top: 20px;
+  font-family: "Staatliches", cursive;
+}
+
+.new-spot-title {
+  font-family: "Staatliches", cursive;
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+.new-spot-padding {
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.spot-background {
+  background-color: rgb(155, 155, 155);
+  font-family: "Staatliches", cursive;
+}
+
+.dropped-in {
+  font-size: 10px;
+  border: 1px solid grey;
+  background-color: whitesmoke;
+  color: grey;
+  padding: 5px;
+  padding-right: 11px;
+  padding-left: 11px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 12px;
+  right: 58px;
+}

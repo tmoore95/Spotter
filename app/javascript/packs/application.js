@@ -20,22 +20,6 @@ require("channels");
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
-$(".dropdown").on("show.bs.dropdown", function navTopDown() {
-  $(this).find(".dropdown-menu").first().stop(true, true).slideDown();
-});
-
-$(".dropdown").on("hide.bs.dropdown", function navTopUp() {
-  $(this).find(".dropdown-menu").first().stop(true, true).slideUp();
-});
-
-$(".dropup").on("show.bs.dropdown", function navBottomDown() {
-  $(this).find(".dropdown-menu").first().stop(true, true).slideDown();
-});
-
-$(".dropup").on("hide.bs.dropdown", function navBottomUp() {
-  $(this).find(".dropdown-menu").first().stop(true, true).slideUp();
-});
-
 // External imports
 import "bootstrap";
 import { initGetPost } from "../plugins/init_get_post";
@@ -43,10 +27,27 @@ import { initGetPost } from "../plugins/init_get_post";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from "../plugins/init_mapbox";
+import { initNewspotMapbox } from "../plugins/init_newspot_mapbox"
 import { refresh } from "../components/refresh";
 
 document.addEventListener("turbolinks:load", () => {
   initGetPost();
   initMapbox();
+  initNewspotMapbox();
   refresh();
+  $(".dropdown").on("show.bs.dropdown", function navTopDown() {
+    $(this).find(".dropdown-menu").first().stop(true, true).slideDown();
+  });
+
+  $(".dropdown").on("hide.bs.dropdown", function navTopUp() {
+    $(this).find(".dropdown-menu").first().stop(true, true).slideUp();
+  });
+
+  $(".dropup").on("show.bs.dropdown", function navBottomDown() {
+    $(this).find(".dropdown-menu").first().stop(true, true).slideDown();
+  });
+
+  $(".dropup").on("hide.bs.dropdown", function navBottomUp() {
+    $(this).find(".dropdown-menu").first().stop(true, true).slideUp();
+  });
 });
