@@ -20,7 +20,7 @@ class PagesController < ApplicationController
       skater.check_ins.each do |c|
       @activity << c
       end
-    skater.favorited_spots.each do |fs|
+    skater.favorites_by_type('Spot').each do |fs|
       @activity << fs
     end
       @activity << Tag.find_by_skater_id(skater.id)
