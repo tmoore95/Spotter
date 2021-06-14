@@ -10,9 +10,9 @@
         <strong><%= @spot.name %></strong>
       <% end %>
       <%= time_ago_in_words(@time) %> ago</p>
-    <% elsif instance.class.name == "Spot" %>
-      <% @spot = Spot.find(instance.id) %>
-      <% @skater = Skater.find(instance.skater_id) %>
+    <% elsif instance.class.name == "Favorite" %>
+      <% @spot = Spot.find(instance.favoritable_id) %>
+      <% @skater = Skater.find(instance.favoritor_id) %>
       <% @time = instance.created_at %>
       <p><%= link_to skater_path(@skater) do %>
         <strong><%= @skater.username %></strong>
