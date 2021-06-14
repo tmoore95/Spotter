@@ -21,7 +21,7 @@
 
 <%= simple_form_for @spot, html: { class: "col-sm-6 offset-sm-3" } do |f| %>
   <%= f.input :name %>
-  <button type="button" class="btn btn-primary tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">Location</button>
+  <button type="button" class="btn btn-primary tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">Choose on map</button>
   <%= f.input :location %>
   <%= f.input :description %>
   <%= f.input :security, collection: %w[Low Medium High] %>
