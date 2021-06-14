@@ -32,8 +32,8 @@
 
 .spot-dropin {
   position: absolute;
-  bottom: 10px;
-  right: 70px;
+  bottom: 0px;
+  right: 46px;
 }
 
 .btn-dropin {
@@ -41,57 +41,51 @@
 }
 
 .spot-info-container {
-  p {
-    margin: 0;
-    font-size: 12px;
-    font-family: "Roboto", sans-serif;
-    background-color: white;
-    padding: 3px;
-    border-radius: 25px;
-    padding-right: 8px;
-    padding-left: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    display: inline-block;
-  }
-
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: row !important;
   padding: 5px;
   background: rgb(41, 41, 41);
 }
 
-.spot-skaters-atm {
-  p {
-    margin: 0;
-    font-size: 12px;
-    font-family: "Roboto", sans-serif;
-    background-color: white;
-    padding: 3px;
-    border-radius: 25px;
-    padding-right: 8px;
-    padding-left: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    display: inline-block;
-  }
+.info-icon-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.spot-info-icon {
+  width: 40px;
+  height: 30px;
+  margin: 0;
+  margin-right: 5px;
+  font-size: 14px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .spot-description-container {
-  height: 12vh;
-  padding: 10px;
-  margin: 24px;
+  padding: 15px;
+  margin: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
 
 .spot-description-header {
   font-family: "Staatliches", cursive;
-  margin-bottom: 2px;
+  font-size: 20px;
+  color: #303c44;
 }
 
 .spot-description-body {
-  font-size: 10px;
+  font-size: 13px;
   margin: 0;
+  padding: 5px;
+  color: #3c3c3c;
 }
 
 .tag-card {
@@ -113,15 +107,16 @@
     margin: 0;
     padding-left: 10px;
     padding-right: 10px;
-    font-size: 13px;
+    font-size: 17px;
   }
 }
 
 .tag-btn {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 0px;
+  right: -4px;
   font-size: 10px;
+  background-color: #239e33;
 }
 
 .fa-heart {
@@ -130,14 +125,62 @@
   right: 10px;
   color: white;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 25px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .favorite-count {
   position: absolute;
   top: 10px;
-  right: 55px;
+  right: 45px;
   color: white;
   font-family: "Staatliches", cursive;
+  font-size: 13px;
+}
+
+.modal-header {
+  background-color: #43545f;
+}
+
+.close {
+  color: white;
+}
+
+.create-tag-btn {
+  position: relative;
+  left: -4%;
+}
+
+.modal-message {
+  color: #313131;
+}
+
+.navigate-spot {
+  color: #303c44;
+}
+
+.tag-caption,
+.tag-username {
+  color: #303c44;
+}
+.tag-username {
+  font-size: 13px !important;
+}
+
+.tag-card {
+  margin-bottom: -10px;
+}
+
+.youtube-card:last-of-type {
+  margin-bottom: 2rem !important;
+}
+
+#tag-header {
+  color: white;
+  margin-bottom: 0;
+  font-family: "Staatliches", cursive;
+}
+
+.tag-label {
+  color: #262626;
 }

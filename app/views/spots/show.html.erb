@@ -7,7 +7,7 @@
     });
     FB.AppEvents.logPageView();
   };
-
+  
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
@@ -16,110 +16,123 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-
 <link rel="stylesheet" href="sweetalert2.min.css">
 <% if @spot.photos.first != nil %>
 <div class='spot-main-banner shadow-lg'  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @spot.photos.first.key %>')">
 <% else %>
 <div class='spot-main-banner shadow-lg'  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.skateparks.co.uk/wp-content/uploads/2018/11/Acton-Skatepark-1.jpeg')">
-   <% end %>
-   <h5 class='spot-name'> <%= @spot.name %></h5>
-   <a href="https://www.google.com/maps/place/<%=@spot.location %>/" target='_blank'>
-      <p class='spot-address'><i class="fas fa-map-marked-alt"></i> <%= @spot.location %></p>
-   </a>
-   <% if current_skater %>
-   <% if current_skater.favorited?(@spot) %>
-   <%= link_to toggle_favorite_spot_path(@spot), remote: true, method: :post do %>
-   <i class="fas fa-heart" style="color: red;"></i>
-   <span class='favorite-count'><%= @spot.favoritors.count %></span>
-   <% end %>
-   <% else %>
-   <%= link_to toggle_favorite_spot_path(@spot), remote: true, method: :post do %>
-   <i class="fas fa-heart" style="color: white;"></i>
-   <span class='favorite-count'><%= @spot.favoritors.count %></span>
-   <% end %>
-   <% end %>
-   <% if @result.count == 0 %>
-    <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %></div>
-   <% end %>
-   <% if @current_skater %>
-   <button type="button" class="btn btn-primary tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">TAG</button>
-   <% end %>
-   <% end %>
+  <% end %>
+  <h5 class='spot-name'> <%= @spot.name %></h5>
+  <a href="https://www.google.com/maps/place/<%=@spot.location %>/" target='_blank'>
+    <p class='spot-address'><i class="fas fa-map-marked-alt"></i> <%= @spot.location %></p>
+  </a>
+  <% if current_skater %>
+  <% if current_skater.favorited?(@spot) %>
+  <%= link_to toggle_favorite_spot_path(@spot), remote: true, method: :post do %>
+  <i class="fas fa-heart" style="color: red;"></i>
+  <span class='favorite-count'><%= @spot.favoritors.count %></span>
+  <% end %>
+  <% else %>
+  <%= link_to toggle_favorite_spot_path(@spot), remote: true, method: :post do %>
+  <i class="fas fa-heart" style="color: white;"></i>
+  <span class='favorite-count'><%= @spot.favoritors.count %></span>
+  <% end %>
+  <% end %>
+  <% if @result.count == 0 %>
+  <div class='spot-dropin'><%= link_to "DROP IN", spot_check_ins_path(@spot), method: :post, class: 'btn-dropin btn btn-primary' %></div>
+  <% end %>
+  <% if @current_skater %>
+  <button type="button" class="btn btn-primary tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">TAG</button>
+  <% end %>
+  <% end %>
 </div>
 <div class='spot-info-container'>
-   <div class='spot-skaters-atm'>
-      <% if current_skater %>
-      <p><i class="fas fa-user-clock"></i> <%= @atm.count %></p>
-      <% end %>
-   </div>
-   <div>
-      <% if @spot.cover %>
-      <p><i class="bi bi-cloud-lightning-rain-fill"></i> cover</p>
-      <%end%>
-      <% if @spot.flatground %>
-      <p><i class="fas fa-grip-lines"></i> flat</p>
-      <%end%>
-      <% if @spot.stairset %>
-      <p><i class="bi bi-bar-chart-steps"></i> stairset</p>
-      <%end%>
-      <% if @spot.ledge %>
-      <p><i class="fas fa-tenge"></i> ledge</p>
-      <%end%>
-      <p><i class="fas fa-hand-paper"></i> <%= @spot.security.downcase %></p>
-   </div>
+  <div style='width: 40px' class='spot-info-icon'>
+    <% if current_skater %>
+    <p><i class="fas fa-user-clock"></i> <%= @atm.count %></p>
+    <% end %>
+  </div>
+  <div class='info-icon-container'>
+    <% if @spot.cover %>
+    <div class='spot-info-icon'>
+      <p> <i class="fas fa-umbrella"></i></p>
+    </div>
+    <%end%>
+    <% if @spot.flatground %>
+    <div class='spot-info-icon'>
+      <p> <i class="fas fa-grip-lines"></i></p>
+    </div>
+    <%end%>
+    <% if @spot.stairset %>
+    <div class='spot-info-icon'>
+      <p><i class="bi bi-bar-chart-steps"></i></p>
+    </div>
+    <%end%>
+    <% if @spot.ledge %>
+    <div class='spot-info-icon'>
+      <p><i class="fas fa-tenge"></i></p>
+    </div>
+    <%end%>
+    <div class='spot-info-icon'>
+      <p><i class="fas fa-hand-paper"></i></p>
+    </div>
+  </div>
 </div>
+<a href="https://www.google.com/maps/place/<%=@spot.location %>/" target='_blank'>
+  <div style='width: 90%;' class='spot-description-container'>
+    <h6 style='margin-bottom: 0' class='spot-description-header navigate-spot'><i class="fas fa-link"></i> &nbsp FIND <%= @spot.name%> ON GMAPS</h6>
+  </div>
+</a>
 <div class='spot-description-container'>
-   <h6 class='spot-description-header'>Description</h6>
-   <p class='spot-description-body'><%= @spot.description %></p>
+  <h6 class='spot-description-header'><i class="fas fa-info-circle"></i> &nbsp INTEL</h6>
+  <p class='spot-description-body'><%= @spot.description %></p>
 </div>
 <div class="modal fade bs-example-modal-new" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-   <div class="modal-dialog">
-      <!-- Modal Content: begins -->
-      <div class="modal-content">
-         <!-- Modal Header -->
-         <div class="modal-header">
-            <h4>Tag <%= @spot.name %></h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-         </div>
-         <!-- Modal Body -->  
-         <div class="modal-body">
-            <div class="body-message">
-               <p>Got a sweet line you want to share? Add an instagram link below</p>
-               <div class='mt-4 mb-2'>
-                  <%= simple_form_for @tag, url: new_tag_path, html: { class: "col-sm-6 offset-sm-3" } do |f| %>
-                  <%= f.input :url %>
-                  <%= f.input :caption %>
-                  <%= f.button :submit, class: 'btn btn-primary' %>
-                  <% end %>
-               </div>
-            </div>
-         </div>
-         <!-- Modal Footer -->
-         <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-         </div>
+  <div class="modal-dialog">
+    <!-- Modal Content: begins -->
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 id ='tag-header'><i class="fas fa-plus"></i> Tag <%= @spot.name %></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
-      <!-- Modal Content: ends -->
-   </div>
+      <!-- Modal Body -->  
+      <div class="modal-body">
+        <div class="body-message">
+          <p class='modal-message'>Got a sweet line you want to share?</p>
+          <div class='mt-4 mb-2'>
+            <%= simple_form_for @tag, url: new_tag_path, html: { class: "col-sm-6 offset-sm-3" } do |f| %>
+            <div class='mb-2 tag-label'><i class="bi bi-link-45deg"></i> YouTube Link</div>
+            <%= f.input :url, label: false %>
+            <div class='mb-2 tag-label'><i class="bi bi-chat-left-quote"></i> Caption</div>
+            <%= f.input :caption, label: false %>
+            <%= f.button :submit, class: 'btn btn-primary create-tag-btn' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<% @tags.each do |t| %>
-<div class="tag-photo-container">
-   <div class='tag-card-head p-2'>
-      <p><%= t.caption %></p>
-      <a href="/skaters/<%= t.skater_id %>">
-         <p>@<%= t.skater.username %></p>
-      </a>
-   </div>
-   <div class="urlbb"><%= t.url %></div>
-   <div class="tag-photo">
-      <p class="post"></p>
-   </div>
+<div style='margin: 10px;'>
+  <% @tags.each do |t| %>
+  <div class='youtube-card' style='margin-bottom: -10px;'>
+    <% @time = t.created_at %>
+    <div class="">
+      <div class='tag-card-head p-2'>
+        <p class='tag-caption'><%= t.caption %></p>
+        <a href="/skaters/<%= t.skater_id %>">
+          <p class='tag-username'><%= time_ago_in_words(@time) %> AGO BY <%= t.skater.username %></p>
+        </a>
+      </div>
+      <div class="urlbb"><%= t.url %></div>
+      <div class="tag-photo">
+        <p class="post"></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
 </div>
-<% end %>
-
 <%= javascript_pack_tag "like" %>
-
 <%= javascript_pack_tag "swal" %>
-
 <script async charset="utf-8" src="https://platform.instagram.com/en_US/embeds.js" ></script>
