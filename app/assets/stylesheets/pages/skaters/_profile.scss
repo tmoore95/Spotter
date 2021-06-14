@@ -43,6 +43,7 @@ a:hover {
   height: 60px;
   width: 60px;
   border-radius: 50%;
+  border: 2px solid rgb(0, 24, 29);
 }
 .profile-header {
   display: flex;
@@ -102,4 +103,16 @@ a:hover {
   p {
     font-size: 14px;
   }
+}
+
+.feed-title {
+  font-family: "Staatliches", cursive;
+  font-size: 25px;
+  text-align: center;
+  color: #303c43;
+  border-bottom: 2px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(0, 24, 29);
+  color: white;
 }
