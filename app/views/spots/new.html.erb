@@ -7,20 +7,31 @@
 }
 </style>
 
-<div class='container my-4'>
-
-<%= simple_form_for @spot, html: { class: "col-sm-6 offset-sm-3" } do |f| %>
-  <%= f.input :name %>
-  <%= f.input :location %>
-  <%= f.input :description %>
-  <%= f.input :security, collection: %w[Low Medium High] %>
-  <div>Features</div>
-  <%= f.input :stairset %>
-  <%= f.input :ledge %>
-  <%= f.input :cover %>
-  <%= f.input :flatground %>
-  <%= f.input :photos, input_html: { multiple: true }, as: :file %>
-  <%= f.button :submit, class: 'btn-cta' %>
-<% end %>
-
+<div class='container new-spot-image'>
+  <div class="new-spot-padding">
+    <div class="login-card-margin">
+      <div class="login-card">
+        <div class="form-margin">
+          <h1 class="new-spot-title">Create a spot</h1>
+          <%= simple_form_for @spot, html: { class: "col-sm-6 offset-sm-3" } do |f| %>
+          <%= f.input :name, label: false, placeholder: "Spot name" %>
+          <%= f.input :location, label: false, placeholder: "Location" %>
+          <%= f.input :description, label: false, placeholder: "Description" %>
+          <%= f.input :security, collection: %w[Low Medium High] %>
+          <div>Features</div>
+          <%= f.input :stairset %>
+          <%= f.input :ledge %>
+          <%= f.input :cover %>
+          <%= f.input :flatground %>
+          <div class="center-btn">
+            <%= f.input :photos, input_html: { multiple: true }, as: :file %>
+          </div>
+          <div class="center-btn">
+            <%= f.button :submit, class: 'btn-cta' %>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  <% end %>
 </div>
