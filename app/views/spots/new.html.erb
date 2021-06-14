@@ -26,8 +26,7 @@
           <h1 class="new-spot-title">Create a spot</h1>
           <%= simple_form_for @spot, html: { class: "col-sm-6 offset-sm-3" } do |f| %>
           <%= f.input :name, label: false, placeholder: "Spot name" %>
-<!--           ADDED THIS BUTTON IN! - ALEX -->
-          <button type="button" class="btn btn-primary tag-btn" data-toggle="modal" data-target=".bs-example-modal-new">Choose on map</button>
+          <button type="button" class="btn-map" data-toggle="modal" data-target=".bs-example-modal-new">Choose on map</button>
           <%= f.input :location, label: false, placeholder: "Location" %>
           <%= f.input :description, label: false, placeholder: "Description" %>
           <%= f.input :security, collection: %w[Low Medium High] %>
@@ -44,7 +43,7 @@
           </div>
         </div>
       </div>
-  </div>
+    </div>
   </div>
   <% end %>
 
