@@ -176,8 +176,6 @@ input:focus::placeholder {
   padding-top: 10px;
 }
 
-.new-spot-image {
-  background-image: url("https://i-d-images.vice.com/images/2016/06/28/ian-kenneth-bird-body-image-1467120858.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+.spot-background {
+  background-color: rgb(155, 155, 155);
 }
