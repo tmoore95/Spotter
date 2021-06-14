@@ -1,0 +1,37 @@
+.btn-cta {
+  font-family: "Staatliches", cursive;
+  color: black;
+  background-color: rgb(216, 255, 206);
+  border: 1px solid #46ff7d;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: lighter;
+}
+
+.btn-normal {
+  font-family: "Staatliches", cursive;
+  background-color: white;
+  border: 1px solid #8d8d8d;
+  padding: 10px 20px;
+  border-radius: 50px;
+  opacity: 0.9;
+}
+
+.btn-filter {
+  font-family: "Staatliches", cursive;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #8d8d8d;
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-weight: lighter;
+  opacity: 0.7;
+  margin-right: 6px;
+}
+
+.btn-menu {
+  width: 85px;
+  font-size: 20px;
+  background-color: rgb(66,84,95);
+  color: white;
+}

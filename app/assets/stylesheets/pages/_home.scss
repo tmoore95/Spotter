@@ -1,6 +1,35 @@
 // Specific CSS for your home-page
 .disclaimer {
-  margin-top: 130px;
-  font-size: 10px;
+  margin-top: 140px;
   text-align: center;
+  p {
+    color: rgb(65, 65, 65);
+    font-size: 10px;
+  }
+}
+
+.login-image {
+  background-image: url("https://i-d-images.vice.com/images/2016/06/28/ian-kenneth-bird-body-image-1467120858.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.login-card-margin {
+  padding: 12px;
+}
+
+.login-card {
+  padding: 12px;
+  background: rgba($color: #d6d6d6, $alpha: 0.5);
+  border-radius: 20px;
+  h2 {
+    text-align: center;
+    font-family: "Staatliches", cursive;
+  }
+}
+
+.form-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

@@ -44,9 +44,11 @@ import { initGetPost } from "../plugins/init_get_post";
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from "../plugins/init_mapbox";
 import { initNewspotMapbox } from "../plugins/init_newspot_mapbox"
+import { refresh } from "../components/refresh";
 
 document.addEventListener("turbolinks:load", () => {
   initGetPost();
   initMapbox();
   initNewspotMapbox();
+  refresh();
 });

@@ -1,37 +1,38 @@
-<% @activity.each do |instance| %>
-  <div class="feed-card m-4 border pt-2 pl-2 pr-2">
-    <% if instance.class.name == "CheckIn" %>
-      <% @spot = Spot.find(instance.spot_id) %>
-      <% @skater = Skater.find(instance.skater_id) %>
-      <% @time = instance.created_at %>
-      <p><%= link_to skater_path(@skater) do %>
-        <strong><%= @skater.username %></strong>
-      <% end %> dropped in to <%= link_to spot_path(@spot) do %>
-        <strong><%= @spot.name %></strong>
+<div class="feed">
+  <% @activity.each do |instance| %>
+    <div class="feed-card m-4 border pt-2 pl-2 pr-2">
+      <% if instance.class.name == "CheckIn" %>
+        <% @spot = Spot.find(instance.spot_id) %>
+        <% @skater = Skater.find(instance.skater_id) %>
+        <% @time = instance.created_at %>
+        <p><%= link_to skater_path(@skater) do %>
+          <strong><%= @skater.username %></strong>
+        <% end %> dropped in to <%= link_to spot_path(@spot) do %>
+          <strong><%= @spot.name %></strong>
+        <% end %>
+        <%= time_ago_in_words(@time) %> ago</p>
+      <% elsif instance.class.name == "Favorite" %>
+        <% @spot = Spot.find(instance.favoritable_id) %>
+        <% @skater = Skater.find(instance.favoritor_id) %>
+        <% @time = instance.created_at %>
+        <p><%= link_to skater_path(@skater) do %>
+          <strong><%= @skater.username %></strong>
+        <% end %> liked <%= link_to spot_path(@spot) do %>
+          <strong><%= @spot.name %></strong>
+        <% end %> 
+        <%= time_ago_in_words(@time) %> ago</p>
+      <% else %>
+        <% @spot = Spot.find(instance.spot_id) %>
+        <% @skater = Skater.find(instance.skater_id) %>
+        <% @time = instance.created_at %>
+        <p><%= link_to skater_path(@skater) do %>
+          <strong><%= @skater.username %></strong>
+        <% end %> tagged <%= link_to spot_path(@spot) do %>
+          <strong><%= @spot.name %></strong>
+        <% end %>
+        <%= time_ago_in_words(@time) %> ago</p>
       <% end %>
-      <%= time_ago_in_words(@time) %> ago</p>
-    <% elsif instance.class.name == "Spot" %>
-      <% @spot = Spot.find(instance.id) %>
-      <% @skater = Skater.find(instance.skater_id) %>
-      <% @time = instance.created_at %>
-      <p><%= link_to skater_path(@skater) do %>
-        <strong><%= @skater.username %></strong>
-      <% end %> liked <%= link_to spot_path(@spot) do %>
-        <strong><%= @spot.name %></strong>
-      <% end %> 
-      <%= time_ago_in_words(@time) %> ago</p>
-    <% else %>
-      <% @spot = Spot.find(instance.spot_id) %>
-      <% @skater = Skater.find(instance.skater_id) %>
-      <% @time = instance.created_at %>
-      <p><%= link_to skater_path(@skater) do %>
-        <strong><%= @skater.username %></strong>
-      <% end %> tagged <%= link_to spot_path(@spot) do %>
-        <strong><%= @spot.name %></strong>
-      <% end %>
-      <%= time_ago_in_words(@time) %> ago</p>
-    <% end %>
-  </div>
-<% end %>
-  
+    </div>
+  <% end %>
+</div>
 
