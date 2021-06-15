@@ -16,17 +16,28 @@
       <% end %>
     </div>
     <div class='skater-favorites'>
-      <p>Following | <span class='following-count'><%= @skater.favorites_by_type('Skater').count %></span></p>
-      <p>Followers | <span class='follower-count'><%= @skater.favoritors_by_type('Skater').count %></span> </p>
+      <p data-toggle="modal" data-target=".bs-example-modal-following">Following | <span class='following-count'><%= @skater.favorites_by_type('Skater').count %></span></p>
+      <p data-toggle="modal" data-target=".bs-example-modal-new">Followers | <span class='follower-count'><%= @skater.favoritors_by_type('Skater').count %></span> </p>
     </div>
   </div>
 </div>
-<% if @skater.favorited_spots.count != 0 %>
-<div class='container mt-4 profile-favorite-spots'>
-  <h6 class='profile-seperator mb-3'><i class="fas fa-bookmark"></i> &nbsp Favourite Spots (<%= @skater.favorited_spots.count %>)</h6>
+<!-- Tab links -->
+<div class="tab mt-3 shadow-lg">
+  <button id="defaultOpen" class="tablinks" onclick="openCity(event, 'London')"><i class="bi bi-heart-fill tab-icon"></i>
+ Favorite Spots (<%= @skater.favorited_spots.count%>)</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')"><i class="fas fa-video tab-icon"></i> Tags</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')"><i class="bi bi-arrow-down-circle-fill tab-icon"></i>
+ Dropins</button>
+</div>
+
+<!-- Tab content -->
+<div id="London" class="tabcontent">
+  <% if @skater.favorited_spots.count != 0 %>
+<div class='container mb-4 mt-2 profile-favorite-spots'>
   <% @skater.favorited_spots.each do |spot| %>
+  <div class='dropin-time'><i class="bi bi-arrow-down-circle-fill tab-icon"></i> <%=spot.check_ins.count %> dropins</div>
   <a href="/spots/<%= spot.id %>">
-    <div class='favorite-spot'>
+    <div class='favorite-spot mb-2'>
       <% if spot.photos.first != nil %>
       <img class='favorite-spot-thumb' src="<%= cl_image_path spot.photos.first.key %>" alt="">
       <% else %>
@@ -38,13 +49,15 @@
   <% end %>
 </div>
 <% end %>
+</div>
 
-<% if @skater.tags.count != 0 %>
-<div class='container mt-4 profile-favorite-spots mb-4'>
-  <h6 class='profile-seperator mb-3'><i class="fas fa-video"></i> &nbsp Recent Tags</h6>
-  <% @skater.tags.last(3).each do |tag| %>
+<div id="Paris" class="tabcontent">
+  <% if @skater.tags.count != 0 %>
+<div class='container mb-4 mt-2 profile-favorite-spots'>
+  <% @skater.tags.reverse.each do |tag| %>
+  <div class='dropin-time'><i class="bi bi-chat-left-quote-fill"></i> <%=tag.caption %> | <%= time_ago_in_words(tag.created_at) %> ago</div>
   <a href="/spots/<%= tag.spot_id %>">
-    <div class='favorite-spot'>
+    <div class='favorite-spot mb-2'>
       <% if tag.spot.photos.first != nil %>
       <img class='favorite-spot-thumb' src="<%= cl_image_path tag.spot.photos.first.key %>" alt="">
       <% else %>
@@ -56,5 +69,103 @@
   <% end %>
 </div>
 <% end %>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+    <% if @skater.check_ins.count != 0 %>
+<div class='container mb-4 mt-2 profile-favorite-spots'>
+  <% @skater.check_ins.reverse.each do |check| %>
+  <div class='dropin-time'><i class="fas fa-clock"></i> <%= time_ago_in_words(check.created_at) %> ago</div>
+  <a href="/spots/<%= check.spot_id %>">
+    <div class='favorite-spot mb-2'>
+      <% if check.spot.photos.first != nil %>
+      <img class='favorite-spot-thumb' src="<%= cl_image_path check.spot.photos.first.key %>" alt="">
+      <% else %>
+      <img class='favorite-spot-thumb' src="https://www.skateparks.co.uk/wp-content/uploads/2018/11/Acton-Skatepark-1.jpeg" alt="">
+      <% end %>
+      <p><%= check.spot.name %></p>
+    </div>
+  </a>
+  <% end %>
+</div>
+<% end %>
+</div>
+
+<div class="modal fade bs-example-modal-new" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <!-- Modal Content: begins -->
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 id ='tag-header'><i class="fas fa-user"></i> &nbsp Followers</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <!-- Modal Body -->  
+      <div class="modal-body">
+        <div class="body-message">   
+          <div class='mb-2'>
+          <% @skater.favoritors.each do |skater|  %>
+          <a href="/skaters/<%=skater.id %>"><div class='follow-user'><img class='follow-av' src="https://sm.ign.com/t/ign_ap/articlepage/t/tony-hawk-/tony-hawk-5-is-coming-later-this-year_fysz.1280.jpg" alt=""><p><%= skater.username %></p></div></a>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bs-example-modal-following" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <!-- Modal Content: begins -->
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 id ='tag-header'><i class="fas fa-user"></i>&nbsp Following</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <!-- Modal Body -->  
+      <div class="modal-body">
+        <div class="body-message">   
+          <div class='mb-2'>
+          <% @skater.favorited_skaters.each do |skater|  %>
+          <a href="/skaters/<%=skater.id %>"><div class='follow-user'><img class='follow-av' src="https://sm.ign.com/t/ign_ap/articlepage/t/tony-hawk-/tony-hawk-5-is-coming-later-this-year_fysz.1280.jpg" alt=""><p><%= skater.username %></p></div></a>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <%= javascript_pack_tag "follow" %>
+
+<script>
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+</script>
+
+<script>
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>

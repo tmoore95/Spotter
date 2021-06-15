@@ -6,11 +6,11 @@
   margin: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: lightslategrey;
+  background-color: #4a4e52;
 }
 
 .navbar {
-  background-color: #435560;
+  background-color: #696969;
   min-height: 60px;
 }
 
@@ -56,7 +56,7 @@
   justify-content: center;
   align-items: center;
   height: 80px;
-  background-color: lightslategrey;
+  background-color: #4a4e52;
 }
 
 .login-buttons {
@@ -79,12 +79,24 @@
 
 #spotter-logo {
   font-family: "Staatliches", cursive;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   color: white;
 }
 
 .dropdown-item {
   color: white;
+}
+
+
+.online-badge {
+  height: 10px;
+  width: 10px;
+  background-color: #43c943;
+  position: relative;
+  border-radius: 50%;
+  bottom: 8px;
+  right: -28px;
+  border: 1px solid white;
 }
 
 #notif {
@@ -100,3 +112,4 @@
   right: 204px;
   color: white;
 }
+

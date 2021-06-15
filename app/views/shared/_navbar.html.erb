@@ -15,7 +15,7 @@
             <%= link_to "Profile", skater_path(current_skater), class: "dropdown-item" %>
             <%= link_to "Sign Out", destroy_skater_session_path, method: :delete, class: "dropdown-item" %>
           </div>
-
+          <div class='online-badge'></div>
         <% else %>
 
         <a class="nav-link text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
