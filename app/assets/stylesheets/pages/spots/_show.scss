@@ -203,7 +203,6 @@ input:focus::placeholder {
 
 .form-margin {
   margin-top: 20px;
-  font-family: "Staatliches", cursive;
 }
 
 .new-spot-title {
@@ -219,7 +218,6 @@ input:focus::placeholder {
 
 .spot-background {
   background-color: rgb(155, 155, 155);
-  font-family: "Staatliches", cursive;
 }
 
 .dropped-in {
@@ -257,4 +255,8 @@ position: absolute;
 
 .video-card {
   position: relative;
+}
+
+.font-main {
+  font-family: "Staatliches", cursive;
 }
