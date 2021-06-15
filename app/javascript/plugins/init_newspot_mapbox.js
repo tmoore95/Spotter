@@ -3,6 +3,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import { Modal } from 'bootstrap';
 
 const initNewspotMapbox = () => {
   const mapElement = document.getElementById('spot_map');
@@ -18,13 +19,13 @@ const initNewspotMapbox = () => {
       zoom: 3
     });
 
-    
-    // RESIZE THE MAP
-    map.on('load', function () {
-      map.resize();
-    });
+    // RESIZES THE MAP FOR THE MODAL. IS A BODGE BECAUSE IT IS STUPID BROKEN
+    const canvas = document.querySelector(".mapboxgl-canvas")
 
-    
+    if (canvas.style.height == "300px"){
+      window.location.reload();
+    }
+       
 
 
     const geocoder = new MapboxGeocoder({
