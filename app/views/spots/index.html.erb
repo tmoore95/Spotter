@@ -1,6 +1,12 @@
+<style>
+  .filter-options {
+    margin: 0;
+  }
+</style>
+
 <div>
   <div id="map"
-    style="width: 375px; height: 437px;"
+    style="width: 375px; height: 410px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     data-center=<%= @map_center ? @map_center : ""  %> >
@@ -12,12 +18,19 @@
 
 
     <div class="filter-options">
-      <%= f.input :stairset, as: :boolean, input_html: { checked: params.dig(:filters, :stairset) == "1" } %>  
-      <%= f.input :ledge, as: :boolean, input_html: { checked: params.dig(:filters, :ledge) == "1" } %>
-      <%= f.input :cover, as: :boolean, input_html: { checked: params.dig(:filters, :cover) == "1" } %>
-      <%= f.input :flatground, as: :boolean, input_html: { checked: params.dig(:filters, :flatground) == "1" } %>
-      <%= f.input :center, as: :hidden, input_html: { id: "hidden-center", value: [] }  %> 
+      <%= f.input :stairset, as: :boolean, input_html: { style: "display: none", checked: params.dig(:filters, :stairset) == "1" }, label_html: { class: "btn btn-primary btn-check filter-options" } %> 
+
+      <%= f.input :ledge, as: :boolean, input_html: { style: "display: none", checked: params.dig(:filters, :ledge) == "1" }, label_html: { class: "btn btn-primary btn-check filter-options" } %>
+
+      <%= f.input :cover, as: :boolean, input_html: { style: "display: none", checked: params.dig(:filters, :cover) == "1" }, label_html: { class: "btn btn-primary btn-check filter-options" } %>
+
+      <%= f.input :flat, as: :boolean, input_html: { style: "display: none", checked: params.dig(:filters, :flatground) == "1" }, label_html: { class: "btn btn-primary btn-check filter-options" } %>
+
+      <%= f.input :center, as: :hidden, input_html: { id: "hidden-center", value: [] } %>
     </div>
+
+    <%# TRY THIS:
+    input_html: { style: "display: none"}, label_html: { class: "btn btn-primary"} %>
 
 
     <%= f.submit "Filter", class: "btn-filter" %>
