@@ -19,11 +19,12 @@ const initNewspotMapbox = () => {
     });
 
     
-    // RESIZE THE MAP
-    map.on('load', function () {
-      map.resize();
-    });
+    // RESIZES THE MAP FOR THE MODAL. IS A BODGE BECAUSE IT IS STUPID BROKEN
+    const canvas = document.querySelector(".mapboxgl-canvas")
 
+    if (canvas.style.height == "300px") {
+      window.location.reload();
+    }
     
 
 
