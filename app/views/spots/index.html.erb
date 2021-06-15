@@ -18,8 +18,6 @@
       <%= f.input :flatground, as: :boolean, input_html: { checked: params.dig(:filters, :flatground) == "1" } %>
       <%= f.input :center, as: :hidden, input_html: { id: "hidden-center", value: [] }  %> 
     </div>
-
-
     <%= f.submit "Filter", class: "btn-filter" %>
     </div>
   <% end %>
