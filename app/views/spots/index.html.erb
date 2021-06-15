@@ -1,12 +1,6 @@
-<style>
-  .filter-options {
-    margin: 0;
-  }
-</style>
-
 <div>
   <div id="map"
-    style="width: 375px; height: 410px;"
+    style="width: 375px; height: 437px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     data-center=<%= @map_center ? @map_center : ""  %> >
@@ -18,13 +12,13 @@
 
 
     <div class="filter-options">
-      <%= f.input :stairset, as: :boolean, input_html: { style: "display: none", checked: params.dig(:filters, :stairset) == "1" }, label_html: { class: "btn btn-primary btn-check filter-options" } %> 
+      <%= f.input :stairset, as: :boolean, label: 'Stairset <p><i class="bi bi-bar-chart-steps"></i></p>'.html_safe, input_html: { style: "display: none", class: 'filter-input', checked: params.dig(:filters, :stairset) == "1" }, label_html: { class: "filter-options" } %> 
 
-      <%= f.input :ledge, as: :boolean, input_html: { style: "display: none", checked: params.dig(:filters, :ledge) == "1" }, label_html: { class: "btn btn-primary btn-check filter-options" } %>
+      <%= f.input :ledge, as: :boolean, label: 'Ledge <p><i class="fas fa-tenge"></i></p>'.html_safe, input_html: { style: "display: none", class: 'filter-input', checked: params.dig(:filters, :ledge) == "1" }, label_html: { class: "filter-options" } %>
 
-      <%= f.input :cover, as: :boolean, input_html: { style: "display: none", checked: params.dig(:filters, :cover) == "1" }, label_html: { class: "btn btn-primary btn-check filter-options" } %>
+      <%= f.input :cover, as: :boolean, label: 'Cover <p><i class="fas fa-umbrella"></i></p>'.html_safe, input_html: { style: "display: none", class: 'filter-input', checked: params.dig(:filters, :cover) == "1" }, label_html: { class: "filter-options" } %>
 
-      <%= f.input :flat, as: :boolean, input_html: { style: "display: none", checked: params.dig(:filters, :flatground) == "1" }, label_html: { class: "btn btn-primary btn-check filter-options" } %>
+      <%= f.input :flatground, as: :boolean, label: 'Flat <p><i class="fas fa-grip-lines"></i></p>'.html_safe, input_html: { style: "display: none", class: 'filter-input', checked: params.dig(:filters, :flatground) == "1" }, label_html: { class: "filter-options" } %>
 
       <%= f.input :center, as: :hidden, input_html: { id: "hidden-center", value: [] } %>
     </div>
