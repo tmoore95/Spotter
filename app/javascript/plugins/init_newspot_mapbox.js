@@ -3,6 +3,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import { Modal } from 'bootstrap';
 
 const initNewspotMapbox = () => {
   const mapElement = document.getElementById('spot_map');
@@ -17,6 +18,7 @@ const initNewspotMapbox = () => {
       center: [1.31222, 51.1275],
       zoom: 3
     });
+
 
     
     // RESIZES THE MAP FOR THE MODAL. IS A BODGE BECAUSE IT IS STUPID BROKEN
