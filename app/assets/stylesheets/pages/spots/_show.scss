@@ -240,6 +240,23 @@ input:focus::placeholder {
   right: 58px;
 }
 
-.bin {
-  color: rgb(255, 35, 35);
+.card-tag-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card-tag-right {
+position: absolute;
+  right: 0px;
+  align-items: center;
+  display: flex;
+  input {
+    color: red;
+    border: 0px;
+    background: white;
+  }
+}
+
+.video-card {
+  position: relative;
 }

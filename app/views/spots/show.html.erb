@@ -121,18 +121,29 @@
     <% @time = t.created_at %>
     <div class="">
       <div class='tag-card-head p-2'>
-       <% if current_skater.username == t.skater.username %>
-        <p class='tag-caption'><%= link_to "🗑 ", tag_path(t), method: :delete, class: "bin" %><%= t.caption %></p>
+       <% if current_skater == t.skater %>
+        <div class="card-tag-left">
+          <p class='tag-caption'><%= t.caption %></p>
+        </div>
+        <div class="card-tag-right">
+          <p class='tag-username'><%= time_ago_in_words(@time) %> AGO BY <%= t.skater.username %>        <div class="delete-tag"><%= button_to "🗑", {:controller => "tags", :action => "destroy", :spot_id => @spot.id, :tag_id => t.id }, :method=>:delete %></div></p>
+          <a href="/skaters/<%= t.skater_id %>"></a>
+        </div>
       <% else %>
-        <p class='tag-caption'><%= t.caption %></p>
-      <% end %>
-        <a href="/skaters/<%= t.skater_id %>">
+        <div class="card-tag-left">
+          <p class='tag-caption'><%= t.caption %></p>
+        </div>
+        <div class="card-right-tag">
           <p class='tag-username'><%= time_ago_in_words(@time) %> AGO BY <%= t.skater.username %></p>
-        </a>
+          <a href="/skaters/<%= t.skater_id %>"></a>
+        </div>
+      <% end %>
       </div>
-      <div class="urlbb"><%= t.url %></div>
-      <div class="tag-photo">
-        <p class="post"></p>
+        <div class="video-card">
+          <div class="urlbb"><%= t.url %></div>
+          <div class="tag-photo">
+          <p class="post"></p>
+        </div>
       </div>
     </div>
   </div>
