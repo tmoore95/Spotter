@@ -26,5 +26,7 @@ class PagesController < ApplicationController
       @activity << Tag.find_by_skater_id(skater.id)
       @activity = @activity.compact.sort_by { |a| a.created_at }.reverse!
     end
+
+    @friend_checkins = CheckIn.all.select {|ci| (Time.now - ci.created_at) < 2.hours && @current_skater.favorited_skaters.include?(ci.skater)} 
   end
 end
