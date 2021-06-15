@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
   end
   resources :skaters
+  resources :tags, only: :destroy
   post "spots/:id", to: "tags#create", as: "new_tag"
   post "skaters/:id", to: "pages#toggle_favorite", as: "toggle_favorite_skater"
   get "/feed", to: "pages#feed", as: "feed"
