@@ -1,0 +1,49 @@
+.feed {
+  margin: 10px;
+}
+
+.feed-card {
+  border: 2px solid rgb(0, 24, 29);
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  p {
+    font-size: 15px;
+  }
+}
+
+.feed-title {
+  font-family: "Staatliches", cursive;
+  font-size: 25px;
+  text-align: center;
+  color: #303c43;
+  border-bottom: 2px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(0, 24, 29);
+  color: white;
+}
+
+.feed-avatar {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(49, 49, 49);
+  margin-right: 20px;
+}
+
+.blink_me {
+  animation: blinker 3s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.5;
+    color: rgba(24, 209, 33, 0.322);
+  }
+}
