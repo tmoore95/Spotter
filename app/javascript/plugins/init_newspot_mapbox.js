@@ -19,13 +19,15 @@ const initNewspotMapbox = () => {
       zoom: 3
     });
 
+
+    
     // RESIZES THE MAP FOR THE MODAL. IS A BODGE BECAUSE IT IS STUPID BROKEN
     const canvas = document.querySelector(".mapboxgl-canvas")
 
-    if (canvas.style.height == "300px"){
+    if (canvas.style.height == "300px") {
       window.location.reload();
     }
-       
+    
 
 
     const geocoder = new MapboxGeocoder({

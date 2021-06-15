@@ -8,16 +8,16 @@
 
 <div class="popup-icons">
     <% if spot.cover %>
-    <p><i class="bi bi-cloud-lightning-rain-fill"></i> cover</p>
+    <p><i class="bi bi-cloud-lightning-rain-fill"></i></p>
     <%end%>
     <% if spot.flatground %>
-    <p><i class="fas fa-grip-lines"></i> flat</p>
+    <p><i class="fas fa-grip-lines"></i></p>
     <%end%>
     <% if spot.stairset %>
-    <p><i class="bi bi-bar-chart-steps"></i> stairset</p>
+    <p><i class="bi bi-bar-chart-steps"></i></p>
     <%end%>
     <% if spot.ledge %>
-    <p><i class="fas fa-tenge"></i> ledge</p>
+    <p><i class="fas fa-tenge"></i></p>
     <%end%>
-    <p><i class="fas fa-hand-paper"></i> <%= spot.security.downcase %></p>
+    <%# <p><i class="fas fa-hand-paper"></i> <%= spot.security.downcase  ADD P AND PE ENDING TAGS%>
   </div>
