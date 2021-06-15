@@ -13,9 +13,10 @@ class TagsController < ApplicationController
   end
 
   def destroy
-    @tag = Tag.find(params[:id])
+    @tag = Tag.find(params["tag_id"].to_i)
+    @spot = Spot.find(params["spot_id"].to_i)
     @tag.destroy
-    redirect_to root_path
+    redirect_to @spot
   end
 
   private

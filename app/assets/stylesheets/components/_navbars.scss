@@ -87,6 +87,7 @@
   color: white;
 }
 
+
 .online-badge {
   height: 10px;
   width: 10px;
@@ -97,3 +98,18 @@
   right: -28px;
   border: 1px solid white;
 }
+
+#notif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  background-color: red;
+  position: absolute;
+  bottom: 37px;
+  right: 204px;
+  color: white;
+}
+

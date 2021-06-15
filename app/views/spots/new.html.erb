@@ -6,6 +6,10 @@
   margin-top: 15px;
 }
 
+.modal-body {
+  padding: 0;
+}
+
 .suggestions-wrapper {
    display: block;
 }
@@ -30,11 +34,21 @@
           <%= f.input :location, label: false, placeholder: "Location" %>
           <%= f.input :description, label: false, placeholder: "Description" %>
           <%= f.input :security, collection: %w[Low Medium High] %>
+
+
           <div>Features</div>
-          <%= f.input :stairset %>
-          <%= f.input :ledge %>
-          <%= f.input :cover %>
-          <%= f.input :flatground %>
+
+          <div class="new-options">
+            <%= f.input :stairset, as: :boolean, label: 'Stairset <p><i class="bi bi-bar-chart-steps"></i></p>'.html_safe, input_html: { style: "display: none", class: 'new-input' }, label_html: { class: "new-options" } %> 
+
+            <%= f.input :ledge, as: :boolean, label: 'Ledge <p><i class="fas fa-tenge"></i></p>'.html_safe, input_html: { style: "display: none", class: 'new-input' }, label_html: { class: "new-options" } %>
+
+            <%= f.input :cover, as: :boolean, label: 'Cover <p><i class="fas fa-umbrella"></i></p>'.html_safe, input_html: { style: "display: none", class: 'new-input' }, label_html: { class: "new-options" } %>
+
+            <%= f.input :flatground, as: :boolean, label: 'Flat <p><i class="fas fa-grip-lines"></i></p>'.html_safe, input_html: { style: "display: none", class: 'new-input' }, label_html: { class: "new-options" } %>
+          </div>
+
+
           <div class="center-btn">
             <%= f.input :photos, input_html: { multiple: true }, as: :file %>
           </div>
@@ -63,18 +77,19 @@
          <!-- Modal Body -->  
          <div class="modal-body">
             <div class="body-message">
-              <div class="geocoder" id="geocoder" style="width: 100%;"></div>
+              <div class="geocoder" id="geocoder"></div>
               <div id="spot_map"
-              style="width: 325.33px; height: 340px;"
+              style="width: 357.33px; height: 524px;"
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
               </div>
             </div>
          </div>
          <!-- Modal Footer -->
-         <div class="modal-footer">
+         <%# DON'T NEED %>
+         <%# <div class="modal-footer">
             <p>Search and refine, then =></p>
             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-         </div>
+         </div> %>
       </div>
       <!-- Modal Content: ends -->
    </div>

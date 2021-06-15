@@ -237,3 +237,24 @@ input:focus::placeholder {
   bottom: 12px;
   right: 58px;
 }
+
+.card-tag-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card-tag-right {
+position: absolute;
+  right: 0px;
+  align-items: center;
+  display: flex;
+  input {
+    color: red;
+    border: 0px;
+    background: white;
+  }
+}
+
+.video-card {
+  position: relative;
+}

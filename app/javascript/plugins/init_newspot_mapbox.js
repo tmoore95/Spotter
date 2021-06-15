@@ -19,6 +19,10 @@ const initNewspotMapbox = () => {
     });
 
     
+    // RESIZE THE MAP
+    map.on('load', function () {
+      map.resize();
+    });
 
     
 
@@ -56,6 +60,8 @@ const initNewspotMapbox = () => {
 
     // ZOOM BUTTONS
     map.addControl(new mapboxgl.NavigationControl());
+
+    
 
   }
 }

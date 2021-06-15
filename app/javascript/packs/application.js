@@ -31,9 +31,10 @@ import { initNewspotMapbox } from "../plugins/init_newspot_mapbox"
 import { refresh } from "../components/refresh";
 
 document.addEventListener("turbolinks:load", () => {
+  initNewspotMapbox();
   initGetPost();
   initMapbox();
-  initNewspotMapbox();
+  
   refresh();
   $(".dropdown").on("show.bs.dropdown", function navTopDown() {
     $(this).find(".dropdown-menu").first().stop(true, true).slideDown();

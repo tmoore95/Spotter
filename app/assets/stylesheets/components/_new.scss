@@ -1,0 +1,19 @@
+.new-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: whitesmoke;
+  .form-group {
+      margin: 10px 5px 10px 5px;
+      padding-right: 1.25rem;
+  }
+}
+
+.new-options {
+  p {
+    text-align: right;
+  }
+}
+
+.new-input:checked + label {
+  color: #435560;
+}
