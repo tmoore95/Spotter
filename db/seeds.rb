@@ -26,14 +26,14 @@ spot1.photos.attach(io: file3, filename: 'st_pauls_london3_z5spn7.jpg', content_
 spot1.save!
 spot2 = Spot.new(name: "Holborn Garden", stairset: false, ledge: true, cover: false, flatground: true, security: "Low", location: "13 Lincoln's Inn Fields, London", skater: skater1,
 description: "Got a good area to skate in, never been stopped by anyone so pretty chill. Gets busy on weekends though.")
-file4 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623332532/skate%20images%20file/st_pauls_london_a15ui9.jpg')
-spot2.photos.attach(io: file4, filename: 'st_pauls_london_a15ui9.jpg', content_type: 'jpg')
+file4 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623754966/skate%20images%20file/holborn_garden1_wgqtoj.jpg')
+spot2.photos.attach(io: file4, filename: 'holborn_garden1_wgqtoj.jpg', content_type: 'jpg')
 file5 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623335861/skate%20images%20file/holborn_garden2_j5l8oq.jpg')
 spot2.photos.attach(io: file5, filename: 'holborn_garden2_j5l8oq.jpg', content_type: 'jpg')
 file6 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623335863/skate%20images%20file/holborn_garden3_u95j0r.jpg')
 spot2.photos.attach(io: file6, filename: 'holborn_garden3_u95j0r.jpg', content_type: 'jpg')
 spot2.save!
-spot3 = Spot.new(name: "Stratford Center!", stairset: false, ledge: false, cover: true, flatground: true, security: "High", location: "54A Broadway, London", skater: skater1,
+spot3 = Spot.new(name: "Stratford Center", stairset: false, ledge: false, cover: true, flatground: true, security: "High", location: "54A Broadway, London", skater: skater1,
 description: "Solid group of skaters from 5pm, anyone from beginners to semi-pro. Nice to skate when the weather is trash.")
 file7 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623336194/skate%20images%20file/stratford_center1_weqwff.jpg')
 spot3.photos.attach(io: file7, filename: 'stratford_center1_weqwff.jpg', content_type: 'jpg')
@@ -42,7 +42,7 @@ spot3.photos.attach(io: file8, filename: 'stratford_center2_xjbdok.jpg', content
 file9 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623336194/skate%20images%20file/stratford_center3_cnyix0.jpg')
 spot3.photos.attach(io: file9, filename: 'stratford_center3_cnyix0.jpg', content_type: 'jpg')
 spot3.save!
-spot4 = Spot.new(name: "Nice location - Ardwick", stairset: false, ledge: false, cover: false, flatground: true, security: "Low", location: "Adrwick, Manchester", skater: skater2,
+spot4 = Spot.new(name: "Ardwick", stairset: false, ledge: false, cover: false, flatground: true, security: "Low", location: "Adrwick, Manchester", skater: skater2,
 description: "Sweet place to mess around with flip tricks if you're looking for a quite place.")
 file10 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623337037/skate%20images%20file/ardwick_manchester_vzzfxt.jpg')
 spot4.photos.attach(io: file10, filename: 'ardwick_manchester_vzzfxt.jpg', content_type: 'jpg')
@@ -57,7 +57,7 @@ description: "Nice stair stack to mess around with, good flatground. Perfect on 
 file12 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623337038/skate%20images%20file/triangle_gardens_manchester_zmjhmh.jpg')
 spot6.photos.attach(io: file12, filename: 'triangle_gardens_manchester_zmjhmh.jpg', content_type: 'jpg')
 spot6.save!
-spot7 = Spot.new(name: "Manch Oxford Road", stairset: false, ledge: true, cover: true, flatground: true, security: "Medium", location: "Oxford Road, Manchester", skater: skater2,
+spot7 = Spot.new(name: "Manc Oxford Road", stairset: false, ledge: true, cover: true, flatground: true, security: "Medium", location: "Oxford Road, Manchester", skater: skater2,
 description: "Excellent big curbs, under cover. In car park beneath bridge down the end of Oxford Road.")
 file13 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623337396/skate%20images%20file/oxford_road_manchester_ognl5x.png')
 spot7.photos.attach(io: file13, filename: 'oxford_road_manchester_ognl5x.jpg', content_type: 'jpg')
@@ -93,7 +93,7 @@ description: "Has some nice bits to skate on, but also quite a few bumpy bits an
 file19 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623338798/skate%20images%20file/otters_prom_liverpool_d6x4su.jpg')
 spot13.photos.attach(io: file19, filename: 'otters_prom_liverpool_d6x4su.jpg', content_type: 'jpg')
 spot13.save!
-spot14 = Spot.new(name: "Canon Hill Car Park", stairset: false, ledge: true, cover: true, flatground: true, security: "Medium", location: "Kings Norton, Birmingham", skater: skater5,
+spot14 = Spot.new(name: "Canon Hill", stairset: false, ledge: true, cover: true, flatground: true, security: "Medium", location: "Kings Norton, Birmingham", skater: skater5,
 description: "As title says, car park in Kings Norton. Perfect to skate if the heavens open.")
 file20 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623338798/skate%20images%20file/cannon_hill_park_birmingham_hnwfsj.jpg')
 spot14.photos.attach(io: file20, filename: 'cannon_hill_park_birmingham_hnwfsj.jpg', content_type: 'jpg')
@@ -155,7 +155,7 @@ spot22.photos.attach(io: file35, filename: 'woolwich_london2_wdmqcs.jpg', conten
 file36 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623341738/skate%20images%20file/woolwich_london3_nxilu2.jpg')
 spot22.photos.attach(io: file36, filename: 'woolwich_london3_nxilu2.jpg', content_type: 'jpg')
 spot22.save!
-spot23 = Spot.new(name: "Beckenham Place Park", stairset: false, ledge: true, cover: false, flatground: true, security: "Low", location: "Old Bromley Rd, London", skater: skater5,
+spot23 = Spot.new(name: "Beckenham Place", stairset: false, ledge: true, cover: false, flatground: true, security: "Low", location: "Old Bromley Rd, London", skater: skater5,
 description: "An abandoned BMX track has left a perfect playground for gaining speed and popping some nice tricks along the course.")
 file37 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623342422/skate%20images%20file/beckenham_place1_k0kl0n.jpg')
 spot23.photos.attach(io: file37, filename: 'beckenham_place1_k0kl0n.jpg', content_type: 'jpg')
