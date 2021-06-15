@@ -6,6 +6,10 @@
   margin-top: 15px;
 }
 
+.modal-body {
+  padding: 0;
+}
+
 .suggestions-wrapper {
    display: block;
 }
@@ -13,6 +17,7 @@
 .mapboxgl-ctrl-geocoder {
    width: 60%;
 }
+
 
 </style>
 
@@ -72,18 +77,19 @@
          <!-- Modal Body -->  
          <div class="modal-body">
             <div class="body-message">
-              <div class="geocoder" id="geocoder" style="width: 100%;"></div>
+              <div class="geocoder" id="geocoder"></div>
               <div id="spot_map"
-              style="width: 325.33px; height: 340px;"
+              style="width: 357.33px; height: 524px;"
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
               </div>
             </div>
          </div>
          <!-- Modal Footer -->
-         <div class="modal-footer">
+         <%# DON'T NEED %>
+         <%# <div class="modal-footer">
             <p>Search and refine, then =></p>
             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-         </div>
+         </div> %>
       </div>
       <!-- Modal Content: ends -->
    </div>

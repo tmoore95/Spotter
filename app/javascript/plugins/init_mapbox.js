@@ -107,7 +107,7 @@ const initMapbox = () => {
       mapboxgl: mapboxgl,
       // LIMITS THE SEARCH TO GB
       countries: 'gb',
-      placeholder: 'Find A Spot',
+      placeholder: 'Find a spot',
       // marker: {
       //   // CAN CHANGE SEARCH COLOR HERE
       //   draggable: true
