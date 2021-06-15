@@ -218,4 +218,22 @@ file51 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623773984
 spot31.photos.attach(io: file51, filename: 'zezere_lisbon_ciz2yj.jpg', content_type: 'jpg')
 spot31.save!
 
+spot31 = Spot.new(name: "", stairset: false, ledge: false, cover: false, flatground: true, security: "Medium", location: "", skater: skater4,
+description: "Should probably be enjoying your family holiday, not skating!")
+file51 = URI.open('')
+spot31.photos.attach(io: file51, filename: '.jpg', content_type: 'jpg')
+spot31.save!
+
+spot31 = Spot.new(name: "", stairset: false, ledge: false, cover: false, flatground: true, security: "Medium", location: "", skater: skater4,
+description: "Should probably be enjoying your family holiday, not skating!")
+file51 = URI.open('')
+spot31.photos.attach(io: file51, filename: '.jpg', content_type: 'jpg')
+spot31.save!
+
+spot31 = Spot.new(name: "", stairset: false, ledge: false, cover: false, flatground: true, security: "Medium", location: "", skater: skater4,
+description: "Should probably be enjoying your family holiday, not skating!")
+file51 = URI.open('')
+spot31.photos.attach(io: file51, filename: '.jpg', content_type: 'jpg')
+spot31.save!
+
 puts "spots created"
