@@ -14,7 +14,6 @@
    width: 60%;
 }
 
-
 </style>
 
 
@@ -30,11 +29,21 @@
           <%= f.input :location, label: false, placeholder: "Location" %>
           <%= f.input :description, label: false, placeholder: "Description" %>
           <%= f.input :security, collection: %w[Low Medium High] %>
+
+
           <div>Features</div>
-          <%= f.input :stairset %>
-          <%= f.input :ledge %>
-          <%= f.input :cover %>
-          <%= f.input :flatground %>
+
+          <div class="new-options">
+            <%= f.input :stairset, as: :boolean, label: 'Stairset <p><i class="bi bi-bar-chart-steps"></i></p>'.html_safe, input_html: { style: "display: none", class: 'new-input' }, label_html: { class: "new-options" } %> 
+
+            <%= f.input :ledge, as: :boolean, label: 'Ledge <p><i class="fas fa-tenge"></i></p>'.html_safe, input_html: { style: "display: none", class: 'new-input' }, label_html: { class: "new-options" } %>
+
+            <%= f.input :cover, as: :boolean, label: 'Cover <p><i class="fas fa-umbrella"></i></p>'.html_safe, input_html: { style: "display: none", class: 'new-input' }, label_html: { class: "new-options" } %>
+
+            <%= f.input :flatground, as: :boolean, label: 'Flat <p><i class="fas fa-grip-lines"></i></p>'.html_safe, input_html: { style: "display: none", class: 'new-input' }, label_html: { class: "new-options" } %>
+          </div>
+
+
           <div class="center-btn">
             <%= f.input :photos, input_html: { multiple: true }, as: :file %>
           </div>

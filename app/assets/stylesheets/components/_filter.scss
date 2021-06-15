@@ -1,10 +1,17 @@
 .filter-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: whitesmoke;
+  color: rgb(0,24,29);
+  margin: 0;
   .form-group {
     margin: 4px;
     display: inline;
+  }
+}
+
+.filter-options {
+  p {
+    text-align: right;
   }
 }
 
@@ -15,17 +22,21 @@
   border: 1px solid #6c757c;
 }
 
-.btn:hover {
-  margin: 13px;
-  background-color: #6c757c;
+.filter-input:checked + label {
   color: whitesmoke;
 }
+// GOT RID OF THESE AS THEY MESS UP THE FILTER BUTTONS
+// .btn:hover {
+//   margin: 13px;
+//   background-color: #6c757c;
+//   color: whitesmoke;
+// }
 
-.btn:hover {
-  margin: 13px;
-  background-color: transparent;
-  border: 1px solid white;
-}
+// .btn:hover {
+//   margin: 13px;
+//   background-color: transparent;
+//   border: 1px solid white;
+// }
 
 .filter-container {
   display: flex;
