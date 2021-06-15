@@ -26,5 +26,8 @@ class PagesController < ApplicationController
       @activity << Tag.find_by_skater_id(skater.id)
       @activity = @activity.compact.sort_by { |a| a.created_at }.reverse!
     end
+    if !params[:ajax]
+      cookies["activity"] = @activity.count
+    end
   end
 end

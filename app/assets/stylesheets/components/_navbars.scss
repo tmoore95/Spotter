@@ -86,3 +86,17 @@
 .dropdown-item {
   color: white;
 }
+
+#notif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  background-color: red;
+  position: absolute;
+  bottom: 37px;
+  right: 204px;
+  color: white;
+}
