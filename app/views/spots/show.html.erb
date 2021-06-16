@@ -23,7 +23,7 @@
   <% end %>
   <h5 class='spot-name'> <%= @spot.name %></h5>
   <a href="https://www.google.com/maps/place/<%=@spot.location %>/" target='_blank'>
-    <p class='spot-address'><i class="fas fa-map-marked-alt"></i> <%= @spot.location %></p>
+    <p class='spot-address'><i class="fas fa-map-marked-alt"></i> <%= @spot.location.split(",").slice(0..1).join(",") %></p>
   </a>
   <% if current_skater %>
   <% if current_skater.favorited?(@spot) %>
@@ -79,7 +79,7 @@
     </div>
   </div>
 </div>
-<a href="https://www.google.com/maps/place/<%=@spot.location %>/" target='_blank'>
+<a href="https://www.google.com/maps/place/<%= @spot.location %>/" target='_blank'>
   <div style='width: 90%;' class='spot-description-container'>
     <h6 style='margin-bottom: 0' class='spot-description-header navigate-spot'><i class="fas fa-link"></i> &nbsp FIND <%= @spot.name%></h6>
   </div>
