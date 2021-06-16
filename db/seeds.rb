@@ -12,6 +12,11 @@ skater2 = Skater.create!(username: "Tom", email: "tom@spotter.com", password: "s
 skater3 = Skater.create!(username: "Harry", email: "harry@spotter.com", password: "secret")
 skater4 = Skater.create!(username: "Alex", email: "alex@spotter.com", password: "secret")
 skater5 = Skater.create!(username: "Paddy", email: "paddy@spotter.com", password: "secret")
+skater6 = Skater.create!(username: "Rodrigo", email: "Rodrigo@spotter.com", password: "secret")
+skater7 = Skater.create!(username: "Thelma", email: "thelma@spotter.com", password: "secret")
+skater8 = Skater.create!(username: "Bonjo", email: "bonjo@spotter.com", password: "secret")
+skater9 = Skater.create!(username: "Hercules", email: "hercules@spotter.com", password: "secret")
+skater10 = Skater.create!(username: "Morris", email: "morris@spotter.com", password: "secret")
 puts "skaters created"
 
 puts "creating spots"
@@ -172,68 +177,90 @@ file42 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623342779
 spot24.photos.attach(io: file42, filename: 'abandoned_car_park_london3_tlkf2a.jpg', content_type: 'jpg')
 spot24.save!
 
-spot25 = Spot.new(name: "Vincenne Streets", stairset: true, ledge: true, cover: false, flatground: false, security: "Medium", location: "Bois de Vincennes, Paris ", skater: skater2,
+spot25 = Spot.new(name: "Vincenne Streets", stairset: true, ledge: true, cover: false, flatground: false, security: "Medium", location: "Bois de Vincennes, Paris ", skater: skater7,
 description: "This snazzy little corner has grown, in Paris, to become a highly sought after spot, picking up vast late night crowds of all ages.")
 file43 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623769619/skate%20images%20file/vincenne_paris_cukuy0.jpg')
 spot25.photos.attach(io: file43, filename: 'vincenne_paris_cukuy0.jpg', content_type: 'jpg')
 spot25.save!
-spot26 = Spot.new(name: "Gijon Stairwell", stairset: true, ledge: false, cover: false, flatground: false, security: "Low", location: "Gijon, Spain", skater: skater4,
+spot26 = Spot.new(name: "Gijon Stairwell", stairset: true, ledge: false, cover: false, flatground: false, security: "Low", location: "Gijon, Spain", skater: skater7,
 description: "A nice set of stairs give skaters ample opportunity to test their skills on these fairly cobbled roads. Despite it's danger, the stairset has become a local staple in the local skating community.")
 file44 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623769618/skate%20images%20file/gijon_spain_dparx1.jpg')
 spot27.photos.attach(io: file44, filename: 'gijon_spain_dparx1.jpg', content_type: 'jpg')
 spot26.save!
-spot27 = Spot.new(name: "Gijon Stairwell", stairset: true, ledge: false, cover: false, flatground: false, security: "High", location: "Rue de Vaugirard, Paris", skater: skater4,
+spot27 = Spot.new(name: "Gijon Stairwell", stairset: true, ledge: false, cover: false, flatground: false, security: "High", location: "Rue de Vaugirard, Paris", skater: skater6,
 description: "Despite the heavy frop the side ledge, this spot has a lot to offer. Solid stairset, smooth concrete and nice lighting for evening shenanigans. Just be careful of the security in the day.")
 file45 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623769618/skate%20images%20file/vaugirard_paris_ypd1xn.jpg')
 spot27.photos.attach(io: file45, filename: 'vaugirard_paris_ypd1xn.jpg', content_type: 'jpg')
 spot27.save!
-spot26 = Spot.new(name: "Rue Cassini", stairset: false, ledge: false, cover: false, flatground: false, security: "Low", location: "Rue Cassini, Paris", skater: skater2,
+spot26 = Spot.new(name: "Rue Cassini", stairset: false, ledge: false, cover: false, flatground: false, security: "Low", location: "Rue Cassini, Paris", skater: skater6,
 description: "Dangerously tight road to be on, but worth it if you can visit. ")
 file46 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623770922/skate%20images%20file/rue_cassini_paris_trzw4m.jpg')
 spot26.photos.attach(io: file46, filename: 'rue_cassini_paris_trzw4m.jpg', content_type: 'jpg')
 spot26.save!
-spot27 = Spot.new(name: "Rue de Tourtille", stairset: false, ledge: true, cover: false, flatground: false, security: "Low", location: "Rue de Tourtille, Paris", skater: skater2,
+spot27 = Spot.new(name: "Rue de Tourtille", stairset: false, ledge: true, cover: false, flatground: false, security: "Low", location: "Rue de Tourtille, Paris", skater: skater8,
 description: "Nice colorful part of Paris, a variety of inclines gives skaters a plethora of opportunities to test their skills. ")
 file47 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623770922/skate%20images%20file/rue_de_tourtille_paris_efaoxr.jpg')
 spot27.photos.attach(io: file47, filename: 'rue_de_tourtille_paris_efaoxr.jpg', content_type: 'jpg')
 spot27.save!
-spot28 = Spot.new(name: "Calle del Fósforo", stairset: false, ledge: true, cover: true, flatground: false, security: "Medium", location: "Calle del Fósforo, Madrid", skater: skater2,
+spot28 = Spot.new(name: "Calle del Fósforo", stairset: false, ledge: true, cover: true, flatground: false, security: "Medium", location: "Calle del Fósforo, Madrid", skater: skater7,
 description: "One of the more interesting areas to skate in Madrid. It's shade in the afternoon allows a cool place to hit up in the day.")
 file48 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623770921/skate%20images%20file/calle_del_f%C3%B3sforo_madrid_rybaiv.jpg')
 spot28.photos.attach(io: file48, filename: 'calle_del_f%C3%B3sforo_madrid_rybaiv.jpg', content_type: 'jpg')
 spot28.save!
-spot29 = Spot.new(name: "Calle Lorenzo Silva", stairset: false, ledge: true, cover: false, flatground: false, security: "Low", location: "Calle Lorenzo Silva, Spain", skater: skater1,
+spot29 = Spot.new(name: "Calle Lorenzo Silva", stairset: false, ledge: true, cover: false, flatground: false, security: "Low", location: "Calle Lorenzo Silva, Spain", skater: skater7,
 description: "Wicked stairset for the whole family")
 file49 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623774000/skate%20images%20file/celle_lorenzo_spain_silkjl.jpg')
 spot29.photos.attach(io: file49, filename: 'celle_lorenzo_spain_silkjl.jpg', content_type: 'jpg')
 spot29.save!
-spot30 = Spot.new(name: "R Santos Lessa", stairset: false, ledge: false, cover: false, flatground: false, security: "Medium", location: "R Santos Lessa, Porto", skater: skater2,
+spot30 = Spot.new(name: "R Santos Lessa", stairset: false, ledge: false, cover: false, flatground: false, security: "Medium", location: "R Santos Lessa, Porto", skater: skater6,
 description: "One of the better spots, to be sure")
 file50 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623773984/skate%20images%20file/.jpg')
 spot30.photos.attach(io: file50, filename: 'lessa_porto_enxxf1.jpg', content_type: 'jpg')
 spot30.save!
-spot31 = Spot.new(name: "R Rio Zezere", stairset: false, ledge: false, cover: false, flatground: true, security: "Medium", location: "R Rio Zezere, Lisbon", skater: skater4,
+spot31 = Spot.new(name: "R Rio Zezere", stairset: false, ledge: false, cover: false, flatground: true, security: "Medium", location: "R Rio Zezere, Lisbon", skater: skater9,
 description: "Should probably be enjoying your family holiday, not skating!")
 file51 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623773984/skate%20images%20file/zezere_lisbon_ciz2yj.jpg')
 spot31.photos.attach(io: file51, filename: 'zezere_lisbon_ciz2yj.jpg', content_type: 'jpg')
 spot31.save!
+spot32 = Spot.new(name: "Pablo Iglesias", stairset: true, ledge: false, cover: false, flatground: true, security: "Low", location: "Carrer de Pablo Iglesias, Palma, Spain", skater: skater6,
+description: "Skating is such a part of this city right now that you’d be forgiven for thinking you’d gone back to the ’90s.")
+file52 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623835267/skate%20images%20file/iglesias_spain_t68oyg.jpg')
+spot32.photos.attach(io: file52, filename: 'iglesias_spain_t68oyg.jpg', content_type: 'jpg')
+spot32.save!
+spot33 = Spot.new(name: "Laforja Way", stairset: true, ledge: false, cover: false, flatground: false, security: "Low", location: "Carrer de Laforja, Barcelona, Spain", skater: skater6,
+description: "he iconic Southbank Undercroft was at risk of closure. Now campaigns like Long Live Southbank are preserving skating as part of our culture.")
+file53 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623835267/skate%20images%20file/laforja_spain_xz7shw.jpg')
+spot33.photos.attach(io: file53, filename: 'laforja_spain_xz7shw.jpg', content_type: 'jpg')
+spot33.save!
+spot34 = Spot.new(name: "Doña Bonito", stairset: false, ledge: false, cover: true, flatground: true, security: "Medium", location: "Doña Berenguela, Córdoba, Spain", skater: skater10,
+description: "Most of all, as our living costs and stress levels, soar, skating is a cheap and sociable way to get outside.")
+file54 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623835267/skate%20images%20file/Do%C3%B1a_spain_ttowmd.jpg')
+spot34.photos.attach(io: file54, filename: 'Do%C3%B1a_spain_ttowmd.jpg', content_type: 'jpg')
+spot34.save!
+spot35 = Spot.new(name: "Praza Comercio", stairset: false, ledge: false, cover: false, flatground: true, security: "High", location: "Praza Comercio, A Coruña, Spain", skater: skater6,
+description: "We spoke to skaters from across the spectrum: amateurs, instructors, teens and pros, all of whom share a love for celebrating and expanding the scene. ")
+file55 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623836010/skate%20images%20file/Comercio_spain_atymfh.jpg')
+spot35.photos.attach(io: file55, filename: 'Comercio_spain_atymfh.jpg', content_type: 'jpg')
+spot35.save!
+spot36 = Spot.new(name: "Calle Tierras", stairset: false, ledge: true, cover: true, flatground: true, security: "Medium", location: "Calle Tierras de Rastrojo, Seville, Spain", skater: skater8,
+description: "When I was growing up in London, I used to go to my local skate shop and buy skate videos on DVD.")
+file56 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623836010/skate%20images%20file/Tierras_spain_wh3uf5.jpg')
+spot36.photos.attach(io: file56, filename: 'Tierras_spain_wh3uf5.jpg', content_type: 'jpg')
+spot36.save!
+spot37 = Spot.new(name: "Ganeta Monte", stairset: false, ledge: true, cover: false, flatground: true, security: "Medium", location: "Ganeta Monte Kalea, Bilbao, Spain", skater: skater9,
+description: "I’ve been making skate videos for a few years. My recent ones are filmed in Charlton skatepark, but we go everywhere.")
+file57 = URI.open('https://res.cloudinary.com/dgjlblazi/image/upload/v1623836010/skate%20images%20file/Monte_spain_gbkubf.jpg')
+spot37.photos.attach(io: file57, filename: 'Monte_spain_gbkubf.jpg', content_type: 'jpg')
+spot37.save!
 
-spot31 = Spot.new(name: "", stairset: false, ledge: false, cover: false, flatground: true, security: "Medium", location: "", skater: skater4,
-description: "Should probably be enjoying your family holiday, not skating!")
-file51 = URI.open('')
-spot31.photos.attach(io: file51, filename: '.jpg', content_type: 'jpg')
-spot31.save!
 
-spot31 = Spot.new(name: "", stairset: false, ledge: false, cover: false, flatground: true, security: "Medium", location: "", skater: skater4,
-description: "Should probably be enjoying your family holiday, not skating!")
-file51 = URI.open('')
-spot31.photos.attach(io: file51, filename: '.jpg', content_type: 'jpg')
-spot31.save!
-
-spot31 = Spot.new(name: "", stairset: false, ledge: false, cover: false, flatground: true, security: "Medium", location: "", skater: skater4,
-description: "Should probably be enjoying your family holiday, not skating!")
-file51 = URI.open('')
-spot31.photos.attach(io: file51, filename: '.jpg', content_type: 'jpg')
-spot31.save!
 
 puts "spots created"
+
+
+
+spot31 = Spot.new(name: "", stairset: false, ledge: false, cover: false, flatground: true, security: "Medium", location: "", skater: skater4,
+description: "")
+file51 = URI.open('')
+spot31.photos.attach(io: file51, filename: '.jpg', content_type: 'jpg')
+spot31.save!
