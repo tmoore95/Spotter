@@ -18,7 +18,7 @@
     font-family: "Staatliches", cursive;
     font-size: 30px;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 110px;
     color: white;
     text-shadow: grey;
     letter-spacing: 1px;
@@ -44,6 +44,11 @@
     background-color: #313131;
   }
 
+  .home-center {
+    display: flex;
+    justify-content: center;
+  }
+
   </style>
 </head>
 
@@ -51,14 +56,17 @@
 <body class="rails-default-error-page">
   <div class="error-image">
     </div>
-      <div class="dialog">
-        <h1>Oh dear, looks like a 404.</h1>
-        <p>Try looking again.</p>
+    <div class="dialog">
+      <h1>Oh dear, looks like a 404.</h1>
+      <p>Try looking again.</p>
+      <div class="home-center">
+        <a href="/show/index">Homepage</a>
+      </div>
     </div>
     <div class="error-flex">
-      <video width="240" height="240" autoplay loop>
-      <source src="../assets/videos/coffee-bail.mp4" type="video/mp4">
-    </div>
+      <video width="320" height="320" autoplay loop muted>
+        <source src="coffee-bail.mp4" type="video/mp4">
+      </div>
 </body>
 
 </html>
