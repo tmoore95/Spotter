@@ -13,6 +13,8 @@ const initNewspotMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'spot_map',
+      //OTHER STYLE
+      // style: 'mapbox://styles/programming835/ckpz8ljri030918qv3hbxg486',
       style: 'mapbox://styles/mapbox/streets-v10',
       // ADDED this. THINK IT IS FINE
       center: [1.31222, 51.1275],
@@ -35,7 +37,7 @@ const initNewspotMapbox = () => {
       accessToken: mapboxgl.accessToken,
       marker: false,
       // LIMITS THE SEARCH TO GB
-      countries: 'gb',
+      // countries: 'gb',
       flyTo: {
         speed: 2,
       }
@@ -47,6 +49,7 @@ const initNewspotMapbox = () => {
     geocoder.on('result', e => {
       const marker = new mapboxgl.Marker({
         draggable: true
+        // ,     color: '#fff'
       })
       .setLngLat(e.result.center)
       .addTo(map)
