@@ -24,6 +24,14 @@
   bottom: 50px;
 }
 
+.upload-photo {
+  border: 1px solid #d3d3d3;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  background: white;
+  border-radius: 2px;
+}
 
 </style>
 
@@ -58,7 +66,7 @@
 
 
           <div class="center-btn font-main">
-            <%= f.input :photos, input_html: { multiple: true }, as: :file %>
+            <%= f.input :photos, input_html: { class: 'd-none', multiple: true }, as: :file, label_html: { class: 'btn-map'}, label: '📷 Upload photos' %>
           </div>
           <div class="center-btn">
             <%= f.button :submit, class: 'btn-cta' %>
