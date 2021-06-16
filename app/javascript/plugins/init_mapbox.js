@@ -29,14 +29,22 @@ const initMapbox = () => {
       // console.log("hello");
       map = new mapboxgl.Map({
         container: 'map',
+        //OTHER STYLE
+        // style: 'mapbox://styles/programming835/ckpz8ljri030918qv3hbxg486',
         style: 'mapbox://styles/mapbox/streets-v10',
       
       });
 
       const markers = JSON.parse(mapElement.dataset.markers);
 
+      
+
       markers.forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+
+        // LAT AND LNG HERE!
+        // console.log(marker.lat);
+        // console.log(marker.lng);
 
         // TO CHANGE THE MARKER COLORS
         // new mapboxgl.Marker({ "color": "#7ac5ff" })
@@ -60,6 +68,8 @@ const initMapbox = () => {
 
       map = new mapboxgl.Map({
         container: 'map',
+        //OTHER STYLE
+        // style: 'mapbox://styles/programming835/ckpz8ljri030918qv3hbxg486',
         style: 'mapbox://styles/mapbox/streets-v10',
 
 
@@ -68,7 +78,7 @@ const initMapbox = () => {
         zoom: 11
       })
 
-      // THIS IS THE MARKER THAT SHOWS ON FILTER
+      // THIS IS THE MARKER THAT SHOWS AS LOCATION ON FILTER 
       var marker = new mapboxgl.Marker({
         "color": "#4668F2"
       }) // Initialize a new marker
@@ -106,11 +116,12 @@ const initMapbox = () => {
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl,
       // LIMITS THE SEARCH TO GB
-      countries: 'gb',
+      // countries: 'gb',
       placeholder: 'Find a spot',
       // marker: {
       //   // CAN CHANGE SEARCH COLOR HERE
-      //   draggable: true
+      //   color: '#fff'
+      //   // draggable: true
       // }
     });
 
@@ -130,8 +141,6 @@ const initMapbox = () => {
   
 
   map.scrollZoom.disable();
-  
-
 
 
   }

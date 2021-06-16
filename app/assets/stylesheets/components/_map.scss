@@ -8,7 +8,16 @@
   padding: 10px !important;
   h4 {
     font-family: "Staatliches", cursive;
+    margin: 6px 0;
   }
+}
+
+.mapboxgl-popup-content {
+  p {
+      font-size: 16px;
+      padding: 4px;
+      display: inline;
+    }
 }
 
 .suggestions-wrapper {
@@ -16,8 +25,8 @@
 }
 
 .popup-icons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 a {

@@ -18,6 +18,12 @@
    width: 60%;
 }
 
+#confirm-button {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+}
+
 
 </style>
 
@@ -30,15 +36,17 @@
           <h1 class="new-spot-title">Create a spot</h1>
           <%= simple_form_for @spot, html: { class: "col-sm-6 offset-sm-3" } do |f| %>
           <%= f.input :name, label: false, placeholder: "Spot name" %>
-          <button type="button" class="btn-map" data-toggle="modal" data-target=".bs-example-modal-new">Choose on map</button>
+          <button type="button" class="btn-map" id="chooseLoc" data-toggle="modal" data-target=".bs-example-modal-new">Choose on map</button>
           <%= f.input :location, label: false, placeholder: "Location" %>
           <%= f.input :description, label: false, placeholder: "Description" %>
-          <%= f.input :security, collection: %w[Low Medium High] %>
+          <div class="font-main">
+            <%= f.input :security, collection: %w[Low Medium High] %>
+          </div>
 
 
-          <div>Features</div>
+          <div class="font-main">Features</div>
 
-          <div class="new-options">
+          <div class="new-options font-main">
             <%= f.input :stairset, as: :boolean, label: 'Stairset <p><i class="bi bi-bar-chart-steps"></i></p>'.html_safe, input_html: { style: "display: none", class: 'new-input' }, label_html: { class: "new-options" } %> 
 
             <%= f.input :ledge, as: :boolean, label: 'Ledge <p><i class="fas fa-tenge"></i></p>'.html_safe, input_html: { style: "display: none", class: 'new-input' }, label_html: { class: "new-options" } %>
@@ -49,7 +57,7 @@
           </div>
 
 
-          <div class="center-btn">
+          <div class="center-btn font-main">
             <%= f.input :photos, input_html: { multiple: true }, as: :file %>
           </div>
           <div class="center-btn">
@@ -90,6 +98,7 @@
             <p>Search and refine, then =></p>
             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
          </div> %>
+         <button type="button" id="confirm-button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
       </div>
       <!-- Modal Content: ends -->
    </div>
