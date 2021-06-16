@@ -5,7 +5,19 @@ class Spot < ApplicationRecord
   has_many_attached :photos
   validates :name, presence: true, length: { in: 3..30 }
   geocoded_by :location
-  after_validation :geocode, if: :will_save_change_to_location?
+  after_validation :add_coordinates, if: :will_save_change_to_location?
   validates :photos, presence: true
   acts_as_favoritable
+
+  private
+
+  def add_coordinates
+    self.geocode
+    unless latitude
+      location = location.split(",").slice(1..-1).join
+      self.save
+      self.geocode
+    end
+  end
 end
+
