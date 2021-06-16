@@ -103,9 +103,9 @@
       <!-- Modal Body -->  
       <div class="modal-body">
         <div class="body-message">   
-          <div class='mb-2'>
+          <div class='mb-2 followers'>
           <% @skater.favoritors.each do |skater|  %>
-          <a href="/skaters/<%=skater.id %>"><div class='follow-user'><img class='follow-av' src="https://sm.ign.com/t/ign_ap/articlepage/t/tony-hawk-/tony-hawk-5-is-coming-later-this-year_fysz.1280.jpg" alt=""><p><%= skater.username %></p></div></a>
+          <a href="/skaters/<%=skater.id %>"><div class='follow-user'><img class='follow-av' src="https://sm.ign.com/t/ign_ap/articlepage/t/tony-hawk-/tony-hawk-5-is-coming-later-this-year_fysz.1280.jpg" alt=""><p class="follower_username"><%= skater.username %></p></div></a>
           <% end %>
           </div>
         </div>
@@ -136,8 +136,6 @@
     </div>
   </div>
 </div>
-
-
 
 <%= javascript_pack_tag "follow" %>
 
