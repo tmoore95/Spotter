@@ -6,9 +6,9 @@ class PagesController < ApplicationController
   def profile
    @skater = Skater.find(params[:id])
    @current_skater = current_skater
-  #  if !params[:ajax]
-  #   cookies["followers"] = @current_skater.favoritors.count
-  #  end
+   if !params[:ajax]
+    cookies["followers"] = @current_skater.favoritors.count
+   end
   end
 
   def toggle_favorite
