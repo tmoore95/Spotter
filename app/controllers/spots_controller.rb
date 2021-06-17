@@ -32,7 +32,7 @@ class SpotsController < ApplicationController
     @current_skater = current_skater
     @spot = Spot.find(params[:id])
     @tag = Tag.new
-    @tags = @spot.tags.all
+    @tags = @spot.tags.all.reverse
     if @current_skater
       @checked_in = CheckIn.all
       @result = @checked_in.select {|c| c.skater_id == current_skater.id && (Time.now - c.created_at) < 2.hours && c.spot_id == @spot.id }
