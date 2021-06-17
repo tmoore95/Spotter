@@ -91,11 +91,6 @@
     <% end %>
   </div>
 </div>
-<a href="https://www.google.com/maps/place/<%= @spot.location %>/" target='_blank'>
-  <div style='width: 95%;' class='spot-description-container'>
-    <h6 style='margin-bottom: 0' class='spot-description-header navigate-spot'><i class="fas fa-link"></i> &nbsp FIND <%= @spot.name%></h6>
-  </div>
-</a>
 <div class='spot-description-container'>
   <h6 class='spot-description-header'><i class="fas fa-info-circle"></i> &nbsp INFO</h6>
   <p class='spot-description-body'><%= @spot.description %></p>
