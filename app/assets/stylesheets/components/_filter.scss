@@ -1,7 +1,7 @@
 .filter-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: rgb(0,24,29);
+  color: whitesmoke;
   margin: 0;
   .form-group {
     margin: 4px;
@@ -23,7 +23,8 @@
 }
 
 .filter-input:checked + label {
-  color: whitesmoke;
+  color: rgb(0,24,29);
+  font-weight: bold;
 }
 // GOT RID OF THESE AS THEY MESS UP THE FILTER BUTTONS
 // .btn:hover {
