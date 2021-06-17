@@ -29,11 +29,13 @@ import { initGetPost } from "../plugins/init_get_post";
 import { initMapbox } from "../plugins/init_mapbox";
 import { initNewspotMapbox } from "../plugins/init_newspot_mapbox"
 import { refresh } from "../components/refresh";
+import { previewImageOnFileSelect } from "../plugins/init_preview_photo"
 
 document.addEventListener("turbolinks:load", () => {
   initNewspotMapbox();
   initGetPost();
   initMapbox();
+  previewImageOnFileSelect();
   
   refresh();
   $(".dropdown").on("show.bs.dropdown", function navTopDown() {
