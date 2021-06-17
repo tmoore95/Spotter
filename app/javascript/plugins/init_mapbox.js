@@ -122,11 +122,11 @@ const initMapbox = () => {
       })
 
       // THIS IS THE MARKER THAT SHOWS AS LOCATION ON FILTER 
-      var marker = new mapboxgl.Marker({
-        "color": "#4668F2"
-      }) // Initialize a new marker
-        .setLngLat(full) // Marker [lng, lat] coordinates
-        .addTo(map); // Add the marker to the map
+      // var marker = new mapboxgl.Marker({
+      //   "color": "#4668F2"
+      // }) // Initialize a new marker
+      //   .setLngLat(full) // Marker [lng, lat] coordinates
+      //   .addTo(map); // Add the marker to the map
 
       const markers = JSON.parse(mapElement.dataset.markers);
 
