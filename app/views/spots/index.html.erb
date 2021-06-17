@@ -1,3 +1,7 @@
+<script>
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+</script>
 <style>
 @media only screen and (min-width: 414px) {
   #map {
@@ -8,7 +12,8 @@
 
 #map {
   width: 100%;
-  height: 66vh;
+  height: calc(var(--vh, 1vh) * 100 - 32vh); 
+  <%# 248.63px); %>
 }
 
 .mapboxgl-canvas {
