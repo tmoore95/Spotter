@@ -11,7 +11,8 @@
 
 .navbar {
   background-color: #696969;
-  min-height: 60px;
+  // min-height: 60px;
+  height: 10vh;
 }
 
 .navbar-brand {
@@ -55,7 +56,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 92px;
+  height: 12vh;
   background-color: #4a4e52;
 }
 
@@ -130,4 +131,8 @@
 .dropdown-item.active,
 .dropdown-item:active {
   background-color: #4c5054 !important;
+}
+
+#spt-footer {
+  height: 12vh;
 }
