@@ -71,7 +71,10 @@
 
 
           <div class="font-main flex-left">
-            <%= f.input :photos, input_html: { class: 'd-none', multiple: true }, as: :file, label_html: { class: 'btn-map-photo'}, label: '📷 Upload photos' %>
+            <%= f.input :photos, input_html: { class: 'd-none', multiple: true, id: "photo-input" }, as: :file, label_html: { class: 'btn-map-photo'}, label: '📷 Upload photos' %>
+            <div class="photo-card">
+              <%= image_tag "", width: 37, height: 37, class: "hidden", id: "photo-preview"%>
+            </div>
           </div>
           <div class="center-btn">
             <%= f.button :submit, class: 'btn-cta' %>
