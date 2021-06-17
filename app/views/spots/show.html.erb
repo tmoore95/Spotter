@@ -74,13 +74,25 @@
       <p><i class="fas fa-tenge"></i></p>
     </div>
     <%end%>
-    <div class='spot-info-icon'>
-      <p><i class="fas fa-hand-paper"></i></p>
+    <% if @spot.security == 'High' %>
+        <div class='spot-info-icon'>
+      <p><i style='color:red;' class="fas fa-hand-paper"></i></p>
     </div>
+    <% end %>
+    <% if @spot.security == 'Medium' %>
+        <div class='spot-info-icon'>
+      <p><i style='color:orange;' class="fas fa-hand-paper"></i></p>
+    </div>
+    <% end %>
+    <% if @spot.security == 'Low' %>
+        <div class='spot-info-icon'>
+      <p><i style='color:#239e33;' class="fas fa-hand-paper"></i></p>
+    </div>
+    <% end %>
   </div>
 </div>
 <a href="https://www.google.com/maps/place/<%= @spot.location %>/" target='_blank'>
-  <div style='width: 90%;' class='spot-description-container'>
+  <div style='width: 95%;' class='spot-description-container'>
     <h6 style='margin-bottom: 0' class='spot-description-header navigate-spot'><i class="fas fa-link"></i> &nbsp FIND <%= @spot.name%></h6>
   </div>
 </a>

@@ -7,8 +7,6 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
-  
-
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -26,14 +24,54 @@ const initMapbox = () => {
     // console.log(full);
 
     if (full.length === 0){
-      // console.log("hello");
-      map = new mapboxgl.Map({
-        container: 'map',
-        //OTHER STYLE
-        // style: 'mapbox://styles/programming835/ckpz8ljri030918qv3hbxg486',
-        style: 'mapbox://styles/mapbox/streets-v10',
+
+      // NEED TO REMOVE / CHANGE FIT MAP TO MARKERS!
+
+      if (sessionStorage["location"]){
+
+        map = new mapboxgl.Map({
+          container: 'map',
+          //OTHER STYLE
+          // style: 'mapbox://styles/programming835/ckpz8ljri030918qv3hbxg486',
+          style: 'mapbox://styles/mapbox/streets-v10',
+          center: [sessionStorage["location"].split(",")[0], sessionStorage["location"].split(",")[1]],
+          zoom: 10
+
+        });
+
+        const markers = JSON.parse(mapElement.dataset.markers);
+
+
+
+        markers.forEach((marker) => {
+          const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+
+          // LAT AND LNG HERE!
+          // console.log(marker.lat);
+          // console.log(marker.lng);
+
+          // TO CHANGE THE MARKER COLORS
+          // new mapboxgl.Marker({ "color": "#7ac5ff" })
+
+          new mapboxgl.Marker()
+            .setLngLat([marker.lng, marker.lat])
+            .setPopup(popup)
+            .addTo(map);
+        });
+
+
+        // THIS IS THE ELSE FOR IF NO LOCAL STORAGE EXISTS
       
-      });
+      } else {
+
+        map = new mapboxgl.Map({
+          container: 'map',
+          //OTHER STYLE
+          // style: 'mapbox://styles/programming835/ckpz8ljri030918qv3hbxg486',
+          style: 'mapbox://styles/mapbox/streets-v10',
+        
+        });
+      
 
       const markers = JSON.parse(mapElement.dataset.markers);
 
@@ -64,6 +102,11 @@ const initMapbox = () => {
 
 
       fitMapToMarkers(map, markers);
+
+      }
+
+
+
     } else {
 
       map = new mapboxgl.Map({
@@ -118,6 +161,7 @@ const initMapbox = () => {
       // LIMITS THE SEARCH TO GB
       // countries: 'gb',
       placeholder: 'Find a spot',
+      marker: false
       // marker: {
       //   // CAN CHANGE SEARCH COLOR HERE
       //   color: '#fff'
@@ -125,11 +169,13 @@ const initMapbox = () => {
       // }
     });
 
-
+    
     geocoder.on('result', e => {
       // console.log(e);
       // get the lat and the long:
       const location = e.result.center;
+      sessionStorage["location"] = location;
+      // THIS IS THE CENTER FOR THE FILTER FORM
       document.getElementById("hidden-center").value = location;
     })
 
@@ -141,7 +187,6 @@ const initMapbox = () => {
   
 
   map.scrollZoom.disable();
-
 
   }
 };

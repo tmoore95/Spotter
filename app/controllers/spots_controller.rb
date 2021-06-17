@@ -25,6 +25,7 @@ class SpotsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { spot: spot })
       }
     end
+    
   end
 
   def show

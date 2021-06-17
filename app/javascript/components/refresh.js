@@ -1,5 +1,6 @@
 import Rails from "@rails/ujs"
 
+let state = false
 const refresh = () => {
   
 //   setInterval(function () {
@@ -84,12 +85,13 @@ const refresh = () => {
         const followerCount = updatedFollowers.split("follow-user").length - 1
         console.log(`follower count${followerCount}`)
         const follower_notif = document.querySelector(".follower_notif")
-        console.log(seen[3])
-        if (seen[3] === undefined || seen[3] === null) {
-          if (followerCount > seenFollowers) {
+        console.log(seen[2])
+        if (seen[2] === undefined || seen[2] === null) {
+          if (followerCount > seenFollowers && state === false) {
             follower_notif.innerHTML = `🔔 ${new_follower} started following you!`
             follower_notif.classList.remove("d-none")
-            setTimeout(() => follower_notif.remove(), 5000)
+            state = true
+            setTimeout(() => follower_notif.remove(), 10000)
           }
         }
       }
