@@ -13,7 +13,7 @@ class Spot < ApplicationRecord
 
   def add_coordinates
     self.geocode
-    unless latitude
+    if !latitude && location
       location = location.split(",").slice(1..-1).join
       self.save
       self.geocode
