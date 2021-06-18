@@ -109,11 +109,11 @@
         <div class="body-message">   
           <div class='mb-2 followers'>
           <% @skater.favoritors.each do |skater|  %>
-            <% if skater.id == 16 %>
+            <% if skater.id == 15 %>
               <a href="/skaters/<%=skater.id %>"><div class='follow-user'><img class='follow-av' src="https://theboardr.com/_next/image?url=https%3A%2F%2Ftheboardr.blob.core.windows.net%2Fheadshots%2F923_900.jpg&w=768&q=75" alt=""><p class="follower_username"><%= skater.username %></p></div></a>
             <% elsif skater.id == 14 %>
               <a href="/skaters/<%=skater.id %>"><div class='follow-user'><img class='follow-av' src="https://www.liveabout.com/thmb/3_ekV83ptU1AP_CzmwLG2Dnb7AE=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/aol-s-build-speaker-series-present---we-are-blood--484618744-599ce0ed054ad9001128c0ba.jpg" alt=""><p class="follower_username"><%= skater.username %></p></div></a>
-            <% elsif skater.id == 15 %>
+            <% elsif skater.id == 16 %>
               <a href="/skaters/<%=skater.id %>"><div class='follow-user'><img class='follow-av' src="https://theboardr.com/_next/image?url=https%3A%2F%2Ftheboardr.blob.core.windows.net%2Fheadshots%2F2685_900.jpg&w=768&q=75" alt=""><p class="follower_username"><%= skater.username %></p></div></a>
             <% else %>
               <a href="/skaters/<%=skater.id %>"><div class='follow-user'><img class='follow-av' src="https://img2.pngio.com/united-states-avatar-organization-information-png-512x512px-user-avatar-png-820_512.jpg" alt=""><p class="follower_username"><%= skater.username %></p></div></a>
@@ -140,11 +140,11 @@
         <div class="body-message">   
           <div class='mb-2'>
           <% @skater.favorited_skaters.each do |skater|  %>
-            <% if skater.id == 16 %>
+            <% if skater.id == 15 %>
               <a href="/skaters/<%=skater.id %>"><div class='follow-user'><img class='follow-av' src="https://theboardr.com/_next/image?url=https%3A%2F%2Ftheboardr.blob.core.windows.net%2Fheadshots%2F923_900.jpg&w=768&q=75" alt=""><p class="follower_username"><%= skater.username %></p></div></a>
             <% elsif skater.id == 14 %>
               <a href="/skaters/<%=skater.id %>"><div class='follow-user'><img class='follow-av' src="https://www.liveabout.com/thmb/3_ekV83ptU1AP_CzmwLG2Dnb7AE=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/aol-s-build-speaker-series-present---we-are-blood--484618744-599ce0ed054ad9001128c0ba.jpg" alt=""><p class="follower_username"><%= skater.username %></p></div></a>
-            <% elsif skater.id == 15 %>
+            <% elsif skater.id == 16 %>
               <a href="/skaters/<%=skater.id %>"><div class='follow-user'><img class='follow-av' src="https://theboardr.com/_next/image?url=https%3A%2F%2Ftheboardr.blob.core.windows.net%2Fheadshots%2F2685_900.jpg&w=768&q=75" alt=""><p class="follower_username"><%= skater.username %></p></div></a>
             <% else %>
               <a href="/skaters/<%=skater.id %>"><div class='follow-user'><img class='follow-av' src="https://img2.pngio.com/united-states-avatar-organization-information-png-512x512px-user-avatar-png-820_512.jpg" alt=""><p class="follower_username"><%= skater.username %></p></div></a>
