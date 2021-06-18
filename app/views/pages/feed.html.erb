@@ -3,7 +3,25 @@
 <div class="feed">
   <% @activity.each do |instance| %>
     <div class="feed-card">
-      <img class='feed-avatar' src="https://pbs.twimg.com/profile_images/1325015260/1979_driveway_fs_stink.jpg" alt="">
+      <% if (instance.class.name == "CheckIn" || instance.class.name == "Spot") && instance.skater_id == 15 %>
+        <img class='feed-avatar' src="https://theboardr.com/_next/image?url=https%3A%2F%2Ftheboardr.blob.core.windows.net%2Fheadshots%2F923_900.jpg&w=768&q=75" alt="">
+      <% end %>
+      <% if (instance.class.name == "CheckIn" || instance.class.name == "Spot") && instance.skater_id == 14 %>
+        <img class='feed-avatar' src="https://www.liveabout.com/thmb/3_ekV83ptU1AP_CzmwLG2Dnb7AE=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/aol-s-build-speaker-series-present---we-are-blood--484618744-599ce0ed054ad9001128c0ba.jpg" alt="">
+      <% end %>
+      <% if (instance.class.name == "CheckIn" || instance.class.name == "Spot") && instance.skater_id == 16 %>
+        <img class='feed-avatar' src="https://theboardr.com/_next/image?url=https%3A%2F%2Ftheboardr.blob.core.windows.net%2Fheadshots%2F2685_900.jpg&w=768&q=75" alt="">
+      <% end %>
+      
+      <% if instance.class.name == "Favorite" && instance.favoritor_id == 15 %>
+        <img class='feed-avatar' src="https://theboardr.com/_next/image?url=https%3A%2F%2Ftheboardr.blob.core.windows.net%2Fheadshots%2F923_900.jpg&w=768&q=75" alt="">
+      <% end %>
+      <% if instance.class.name == "Favorite" && instance.favoritor_id == 14 %>
+        <img class='feed-avatar' src="https://www.liveabout.com/thmb/3_ekV83ptU1AP_CzmwLG2Dnb7AE=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/aol-s-build-speaker-series-present---we-are-blood--484618744-599ce0ed054ad9001128c0ba.jpg" alt="">
+      <% end %>
+      <% if instance.class.name == "Favorite" && instance.favoritor_id == 16 %>
+        <img class='feed-avatar' src="https://theboardr.com/_next/image?url=https%3A%2F%2Ftheboardr.blob.core.windows.net%2Fheadshots%2F2685_900.jpg&w=768&q=75" alt="">
+      <% end %>
       <% if instance.class.name == "CheckIn" %>
         <% @spot = Spot.find(instance.spot_id) %>
         <% @skater = Skater.find(instance.skater_id) %>
